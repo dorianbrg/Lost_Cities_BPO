@@ -9,8 +9,7 @@ abstract public class PaquetCouleur extends PaquetBase {
     }
 
     public boolean peutPoser(Carte carte) {
-        Carte last_carte = voirDerniereCarte();
-        return last_carte.compareTo(carte) < 0;
+        return carte.getCouleur() == couleur;
     }
 
     public boolean poser(Carte carte) {

@@ -20,4 +20,5 @@ public class Carte implements Comparable<Carte> {
     public TypeCarte getCarte() {
         return carte;
     }
+
 }
