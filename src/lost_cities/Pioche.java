@@ -16,7 +16,7 @@ public class Pioche extends PaquetBase implements Piochable {
         melanger();
     }
 
-    public Carte prendreCarte() { // prend la dernière carte sur la pile
-        return prendreDerniereCarte();
+    public Carte prendreCarte() { // prend la première carte sur la pile
+        return prendrePremiereCarte(); // on considère la pioche face retournée, donc la première carte est celle tout au dessus du tas
     }
 }
