@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class Pioche extends PaquetBase {
+public class Pioche extends PaquetBase implements Piochable {
 
     public void init(Carte... cartes) {
         ajouterCartes(cartes);

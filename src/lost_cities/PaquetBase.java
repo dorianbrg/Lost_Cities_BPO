@@ -84,7 +84,8 @@ abstract public class PaquetBase implements Paquet {
         return this.paquet.indexOf(carte);
     }
 
+    @Override
     public Iterator<Carte> iterator() { // car Paquet implémente Iterable<Carte>
-        return this.paquet.iterator();
+        return Collections.unmodifiableList(this.paquet).iterator();
     }
 }
