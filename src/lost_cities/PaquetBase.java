@@ -10,8 +10,16 @@ abstract public class PaquetBase implements Paquet {
         this.paquet = new ArrayList<>();
     }
 
-    protected abstract void ajouterCartes(Carte... cartes);
-    protected abstract void ajouterCartes(Collection<Carte> cartes);
+    protected void ajouterCartes(Carte... cartes) {
+        for (Carte c: cartes) {
+            this.paquet.add(c);
+        }
+    }
+    protected void ajouterCartes(Collection<Carte> cartes) {
+        for (Carte c: cartes) {
+            this.paquet.add(c);
+        }
+    }
 
     protected void melanger() {
         Collections.shuffle(this.paquet);
@@ -24,7 +32,7 @@ abstract public class PaquetBase implements Paquet {
     }
 
     protected void trier() {
-        this.paquet.sort(); // ordre naturel implémenté dans Carte
+        this.paquet.sort(null); // ordre naturel implémenté dans Carte
     }
 
     protected Carte prendrePremiereCarte() {
@@ -70,6 +78,10 @@ abstract public class PaquetBase implements Paquet {
 
     public Stream<Carte> cartes() {
         return this.paquet.stream();
+    }
+
+    public int getIndice(Carte carte) {
+        return this.paquet.indexOf(carte);
     }
 
     public Iterator<Carte> iterator() { // car Paquet implémente Iterable<Carte>

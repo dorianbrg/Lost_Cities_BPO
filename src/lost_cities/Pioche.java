@@ -5,25 +5,18 @@ import java.util.Collection;
 import java.util.List;
 
 public class Pioche extends PaquetBase {
-    List<Carte> pioche;
 
-    public Pioche() {
-        this.pioche = new ArrayList<>();
+    public void init(Carte... cartes) {
+        ajouterCartes(cartes);
+        melanger();
     }
 
-    public void ajouterCartes(Carte... cartes) {
-        for (Carte c: cartes) {
-            this.pioche.add(c);
-        }
-    }
-
-    public void ajouterCartes(Collection<Carte> cartes) {
-        for (Carte c: cartes) {
-            this.pioche.add(c);
-        }
+    public void init(Collection<Carte> cartes) {
+        ajouterCartes(cartes);
+        melanger();
     }
 
     public Carte prendreCarte() { // prend la dernière carte sur la pile
-        return this.pioche.removeLast();
+        return prendreDerniereCarte();
     }
 }
