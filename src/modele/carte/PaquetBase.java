@@ -49,7 +49,7 @@ abstract public class PaquetBase implements Paquet {
         }
         return this.paquet.remove(indice);
     }
-    
+
     /* Implémentation des méthodes de l'interface non définies par défaut */
 
     public int getNbCartes() {
