@@ -1,17 +1,23 @@
 package modele.carte;
 
+import java.util.Comparator;
+
 public class Carte implements Comparable<Carte> {
-    private Couleur couleur;
-    private TypeCarte carte;
+    private final Couleur couleur;
+    private final TypeCarte carte;
 
     public Carte(Couleur couleur, TypeCarte carte) {
         this.couleur = couleur;
         this.carte = carte;
     }
 
+    private static final Comparator<Carte> COMP =
+            Comparator.comparing(Carte::getCouleur)
+                    .thenComparingInt(c -> c.getCarte().getValeur());
+
     @Override
-    public int compareTo(Carte autre) {
-        return Integer.compare(this.carte.getValeur(),autre.carte.getValeur());
+    public int compareTo(Carte autre) { // pour l'ordre naturel comme la classe implémente Comparable<Carte>
+        return COMP.compare(this,autre);
     }
 
     public Couleur getCouleur() {

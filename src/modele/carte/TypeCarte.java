@@ -9,7 +9,7 @@ public enum TypeCarte {
         this.valeur = valeur;
     }
 
-    int getValeur() {
+    public int getValeur() {
         return valeur;
     }
 }
