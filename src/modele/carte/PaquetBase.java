@@ -44,15 +44,13 @@ abstract public class PaquetBase implements Paquet {
     }
 
     protected Carte prendreCarte(int indice) {
+        if ( (indice < 0) || (indice >= this.getNbCartes()) ) {
+            return null;
+        }
         return this.paquet.remove(indice);
     }
-
-
-    /* Implémentation des méthodes de l'interface */
-
-    public boolean estVide() {
-        return (this.paquet.isEmpty());
-    }
+    
+    /* Implémentation des méthodes de l'interface non définies par défaut */
 
     public int getNbCartes() {
         return this.paquet.size();
@@ -62,18 +60,6 @@ abstract public class PaquetBase implements Paquet {
         if (indice < 0 || indice >= this.paquet.size())
             return null;
         return this.paquet.get(indice);
-    }
-
-    public Carte voirPremiereCarte() {
-        if (this.paquet.isEmpty())
-            return null;
-        return this.paquet.getFirst();
-    }
-
-    public Carte voirDerniereCarte() {
-        if (this.paquet.isEmpty())
-            return null;
-        return this.paquet.getLast();
     }
 
     public Stream<Carte> cartes() {
