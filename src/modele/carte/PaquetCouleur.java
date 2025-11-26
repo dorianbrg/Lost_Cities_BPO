@@ -1,4 +1,4 @@
-package lost_cities;
+package modele.carte;
 
 abstract public class PaquetCouleur extends PaquetBase {
     private Couleur couleur;

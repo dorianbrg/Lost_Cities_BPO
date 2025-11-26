@@ -1,4 +1,4 @@
-package lost_cities;
+package modele.carte;
 
 import java.util.*;
 import java.util.stream.Stream;

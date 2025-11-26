@@ -1,4 +1,4 @@
-package lost_cities;
+package modele.carte;
 
 public class Defausse extends PaquetCouleur implements Piochable {
 

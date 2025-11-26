@@ -1,4 +1,4 @@
-package lost_cities;
+package modele.carte;
 
 public class Carte implements Comparable<Carte> {
     private Couleur couleur;
