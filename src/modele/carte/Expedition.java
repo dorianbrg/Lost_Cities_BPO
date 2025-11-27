@@ -6,7 +6,7 @@ public class Expedition extends PaquetCouleur {
         super(couleur);
     }
 
-    public boolean peutPoserCarte(Carte carte) {
+    public boolean peutPoser(Carte carte) {
        return super.peutPoser(carte) &&
                (carte.compareTo(voirDerniereCarte()) >= 0); // correspondance couleur et valeur croissante du paquet
     }

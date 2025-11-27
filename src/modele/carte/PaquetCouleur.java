@@ -1,7 +1,7 @@
 package modele.carte;
 
 abstract public class PaquetCouleur extends PaquetBase {
-    private Couleur couleur;
+    private final Couleur couleur;
 
     PaquetCouleur(Couleur couleur) {
         super();
