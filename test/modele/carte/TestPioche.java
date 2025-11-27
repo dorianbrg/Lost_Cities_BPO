@@ -2,8 +2,7 @@ package modele.carte;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestPioche {
     @Test
@@ -31,5 +30,14 @@ public class TestPioche {
         p.prendreCarte();
 
         assertTrue(p.estVide());
+    }
+
+    @Test
+    public void testPiocherDansVide() {
+        Pioche p = new Pioche();
+
+        Carte res = p.prendreCarte();
+
+        assertNull(res);
     }
 }
