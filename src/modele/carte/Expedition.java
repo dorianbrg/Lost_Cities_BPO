@@ -7,8 +7,12 @@ public class Expedition extends PaquetCouleur {
     }
 
     public boolean peutPoser(Carte carte) {
+        Carte DerCarte = voirDerniereCarte();
+        if (DerCarte == null) {
+            return super.peutPoser(carte); // juste correspondance couleur
+        }
        return super.peutPoser(carte) &&
-               (carte.compareTo(voirDerniereCarte()) >= 0); // correspondance couleur et valeur croissante du paquet
+               (carte.compareTo(DerCarte) >= 0); // correspondance couleur et valeur croissante du paquet
     }
 
     int calculerScore() {

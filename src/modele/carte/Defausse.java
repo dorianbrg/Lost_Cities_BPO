@@ -8,6 +8,6 @@ public class Defausse extends PaquetCouleur implements Piochable {
 
     public Carte prendreCarte() {
         return prendreDerniereCarte(); // les défausses sont face à nous, qd on pioche dans la défausse il s'agit de la dernière carte
-    }
+    } // Cas pour une défausse vide géré dans PaquetBase
 
 }
