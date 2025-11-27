@@ -55,7 +55,7 @@ public class TestPioche {
         List<Carte> res = new ArrayList<>();
         res.add(c1);
         res.add(c2);
-        res.add(c3);
+        res.add(c3); // ordre d'insertion normal
 
         assertNotEquals(res.stream(),p.cartes());
     }
