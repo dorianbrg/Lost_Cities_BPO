@@ -24,7 +24,12 @@ public class Expedition extends PaquetCouleur {
                 .filter(c -> c.getCouleur() == super.getCouleur())
                 .filter(c -> c.getCarte() == TypeCarte.PARI)
                 .count();
-
-        return score * (1 + (int) nbPari);
+        boolean bonus = (getNbCartes() >= 8);
+        if (bonus) {
+            return score * (1 + (int) nbPari) + 20;
+        }
+        else {
+            return score * (1 + (int) nbPari);
+        }
     }
 }
