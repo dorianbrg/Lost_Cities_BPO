@@ -40,6 +40,18 @@ public class TestPaquet {
     }
 
     @Test
-    
+    public void testTriMain() {
+        Main m = new Main();
+        Carte c1 = new Carte(Couleur.JAUNE, TypeCarte.DEUX);
+        Carte c2 = new Carte(Couleur.BLANC, TypeCarte.DEUX);
+        Carte c3 = new Carte(Couleur.JAUNE, TypeCarte.PARI);
+
+        m.ajouterCartes(c1,c2,c3);
+        m.trier();
+
+        assertTrue(m.voirCarte(0) == c3);
+        assertTrue(m.voirCarte(1) == c1);
+        assertTrue(m.voirCarte(2) == c2);
+    }
 
 }
