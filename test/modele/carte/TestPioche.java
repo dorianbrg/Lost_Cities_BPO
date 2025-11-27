@@ -3,6 +3,7 @@ package modele.carte;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestPioche {
     @Test
@@ -12,8 +13,23 @@ public class TestPioche {
         Carte c2 = new Carte(Couleur.BLANC, TypeCarte.DEUX);
         Carte c3 = new Carte(Couleur.JAUNE, TypeCarte.PARI);
 
-        p.ajouterCartes(c1,c2,c3);
-        assertEquals(3,p.getNbCartes());
+        p.init(c1,c2,c3);
 
+        assertEquals(3,p.getNbCartes());
+    }
+
+    @Test
+    public void testPiocheVide() {
+        Pioche p = new Pioche();
+        Carte c1 = new Carte(Couleur.JAUNE, TypeCarte.DEUX);
+        Carte c2 = new Carte(Couleur.BLANC, TypeCarte.DEUX);
+        Carte c3 = new Carte(Couleur.JAUNE, TypeCarte.PARI);
+
+        p.init(c1,c2,c3);
+        p.prendreCarte();
+        p.prendreCarte();
+        p.prendreCarte();
+
+        assertTrue(p.estVide());
     }
 }
