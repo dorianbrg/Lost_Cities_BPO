@@ -36,11 +36,12 @@ abstract public class PaquetBase implements Paquet {
     }
 
     protected Carte prendrePremiereCarte() {
-        return this.paquet.removeFirst();
+        return prendreCarte(0);
     }
 
     protected Carte prendreDerniereCarte() {
-        return this.paquet.removeLast();
+
+        return prendreCarte(getNbCartes()-1);
     }
 
     protected Carte prendreCarte(int indice) {
