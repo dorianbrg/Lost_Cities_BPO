@@ -37,6 +37,8 @@ public class TestDefausse {
 
     @Test
     public void testDefausseVide() {
-        
+        Defausse d = new Defausse(Couleur.ROUGE);
+
+        assertNull(d.prendreCarte());
     }
 }
