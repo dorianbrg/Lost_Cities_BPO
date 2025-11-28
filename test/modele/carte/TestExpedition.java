@@ -73,6 +73,17 @@ public class TestExpedition {
         assertEquals(-40, exp.calculerScore());
     }
 
+    @Test
+    public void testExpeditionScoreSimple() {
+        Expedition exp = new Expedition(Couleur.BLEU);
+        exp.poser(new Carte(Couleur.BLEU, TypeCarte.CINQ));
+        exp.poser(new Carte(Couleur.BLEU, TypeCarte.DIX));
+        // (5 + 10 - 20) * 1 = -5
+        assertEquals(-5, exp.calculerScore());
+    }
+
+
+
 
 
 
