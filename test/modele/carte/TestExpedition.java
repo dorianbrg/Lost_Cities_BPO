@@ -63,7 +63,17 @@ public class TestExpedition {
         assertEquals(0, exp.calculerScore());
     }
 
-    
+    @Test
+    public void testScoreParis() {
+        Expedition exp = new Expedition(Couleur.ROUGE);
+        Carte pari = new Carte(Couleur.ROUGE, TypeCarte.PARI);
+
+        exp.poser(pari);
+
+        assertEquals(-40, exp.calculerScore());
+    }
+
+
 
 
 

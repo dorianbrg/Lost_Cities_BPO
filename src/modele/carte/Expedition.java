@@ -20,6 +20,7 @@ public class Expedition extends PaquetCouleur {
                 .filter(c -> c.getCouleur() == super.getCouleur())
                 .mapToInt(c -> c.getCarte().getValeur())
                 .sum();
+        score -= 20; // prix de l'expédition
         long nbPari = super.cartes()
                 .filter(c -> c.getCouleur() == super.getCouleur())
                 .filter(c -> c.getCarte() == TypeCarte.PARI)
