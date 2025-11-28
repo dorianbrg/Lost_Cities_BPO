@@ -2,8 +2,7 @@ package modele.carte;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestDefausse {
     @Test
@@ -28,5 +27,16 @@ public class TestDefausse {
     }
 
     @Test
-    public void testDefausserAutreCouleur
+    public void testDefausserAutreCouleur() {
+        Defausse d = new Defausse(Couleur.ROUGE);
+        Carte c1 = new Carte(Couleur.JAUNE, TypeCarte.DEUX);
+
+        assertFalse(d.peutPoser(c1));
+
+    }
+
+    @Test
+    public void testDefausseVide() {
+        
+    }
 }
