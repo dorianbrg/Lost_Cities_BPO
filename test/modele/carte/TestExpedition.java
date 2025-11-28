@@ -82,6 +82,16 @@ public class TestExpedition {
         assertEquals(-5, exp.calculerScore());
     }
 
+    @Test
+    public void testScoreMultiplication() {
+        Expedition exp = new Expedition(Couleur.BLEU);
+        exp.poser(new Carte(Couleur.BLEU, TypeCarte.PARI));
+        exp.poser(new Carte(Couleur.BLEU, TypeCarte.CINQ));
+        exp.poser(new Carte(Couleur.BLEU, TypeCarte.DIX));
+        // (5 + 10 - 20) * 2 = -10
+        assertEquals(-10, exp.calculerScore());
+    }
+
 
 
 
