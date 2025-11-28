@@ -43,6 +43,18 @@ public class TestExpedition {
         assertEquals(2, exp.getNbCartes());
     }
 
+    @Test
+    public void testPoserMauvaiseCouleur() {
+        Expedition exp = new Expedition(Couleur.ROUGE);
+        Carte pari = new Carte(Couleur.ROUGE, TypeCarte.PARI);
+        Carte deux = new Carte(Couleur.JAUNE, TypeCarte.DEUX);
+        Carte cinq = new Carte(Couleur.ROUGE, TypeCarte.CINQ);
+
+        assertTrue(exp.poser(pari));
+        assertFalse(exp.poser(deux));
+        assertTrue(exp.poser(cinq));
+        assertEquals(2, exp.getNbCartes());
+    }
 
 
 
