@@ -92,6 +92,21 @@ public class TestExpedition {
         assertEquals(-10, exp.calculerScore());
     }
 
+    @Test
+    public void testScoreBonus() {
+        Expedition exp = new Expedition(Couleur.BLEU);
+        exp.poser(new Carte(Couleur.BLEU, TypeCarte.DEUX));
+        exp.poser(new Carte(Couleur.BLEU, TypeCarte.TROIS));
+        exp.poser(new Carte(Couleur.BLEU, TypeCarte.QUATRE));
+        exp.poser(new Carte(Couleur.BLEU, TypeCarte.CINQ));
+        exp.poser(new Carte(Couleur.BLEU, TypeCarte.SIX));
+        exp.poser(new Carte(Couleur.BLEU, TypeCarte.SEPT));
+        exp.poser(new Carte(Couleur.BLEU, TypeCarte.HUIT));
+        exp.poser(new Carte(Couleur.BLEU, TypeCarte.NEUF));
+        // ( 2+3+4+5+6+7+8+9 - 20) + 20 = 34
+        assertEquals(44, exp.calculerScore());
+    }
+
 
 
 
