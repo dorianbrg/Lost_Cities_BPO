@@ -56,6 +56,17 @@ public class TestExpedition {
         assertEquals(2, exp.getNbCartes());
     }
 
+    @Test
+    public void testScoreVide() {
+        Expedition exp = new Expedition(Couleur.ROUGE);
+
+        assertEquals(0, exp.calculerScore());
+    }
+
+    
+
+
+
 
 
 
