@@ -1,0 +1,27 @@
+package modele.carte;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class TestExpedition {
+
+    @Test
+    public void testExpeditionOrdreValide() {
+        Expedition exp = new Expedition(Couleur.ROUGE);
+        Carte pari = new Carte(Couleur.ROUGE, TypeCarte.PARI);
+        Carte deux = new Carte(Couleur.ROUGE, TypeCarte.DEUX);
+        Carte cinq = new Carte(Couleur.ROUGE, TypeCarte.CINQ);
+
+        assertTrue(exp.poser(pari));
+        assertTrue(exp.poser(deux));
+        assertTrue(exp.poser(cinq));
+        assertEquals(3, exp.getNbCartes());
+    }
+
+    
+
+
+
+}
