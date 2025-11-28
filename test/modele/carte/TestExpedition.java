@@ -2,8 +2,7 @@ package modele.carte;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestExpedition {
 
@@ -20,7 +19,18 @@ public class TestExpedition {
         assertEquals(3, exp.getNbCartes());
     }
 
-    
+    @Test
+    public void testPariApresChiffre() {
+        Expedition exp = new Expedition(Couleur.ROUGE);
+        Carte pari = new Carte(Couleur.ROUGE, TypeCarte.PARI);
+        Carte deux = new Carte(Couleur.ROUGE, TypeCarte.DEUX);
+
+        assertTrue(exp.poser(deux));
+        assertFalse(exp.poser(pari));
+        assertEquals(1, exp.getNbCartes());
+    }
+
+
 
 
 
