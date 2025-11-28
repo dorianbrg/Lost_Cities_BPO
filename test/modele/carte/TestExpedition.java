@@ -106,14 +106,5 @@ public class TestExpedition {
         // ( 2+3+4+5+6+7+8+9 - 20) + 20 = 34
         assertEquals(44, exp.calculerScore());
     }
-
-
-
-
-
-
-
-
-
-
+    // Fin de la classe de Test et du TP2
 }
