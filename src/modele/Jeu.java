@@ -56,7 +56,7 @@ public class Jeu {
         else {
             carteEnMain = this.joueur1.getMain().prendreCarte(coup.getIndCarte());
         }
-        if (coup.getTypeCoup() == TypeCoup.JOUER) { // Cas où le coup est JOUER
+        if ( (coup.getTypeCoup() == TypeCoup.JOUER) && (carteEnMain != null) ) { // Cas où le coup est JOUER
             if (joueurCourant == 0) {
                 if (this.joueur0.getExpedition(carteEnMain.getCouleur()).poser(carteEnMain)) {
                     this.joueur0.getMain().prendreCarte(coup.getIndCarte());
@@ -72,7 +72,7 @@ public class Jeu {
                 else return false;
             }
         }
-        else { // Cas où le coup est DEFAUSSER
+        else if ( (coup.getTypeCoup() == TypeCoup.DEFAUSSER) && (carteEnMain != null) ){ // Cas où le coup est DEFAUSSER
             this.defausses.get(carteEnMain.getCouleur()).poser(carteEnMain);
             if (joueurCourant == 0) {
                 this.joueur0.getMain().prendreCarte(coup.getIndCarte());
@@ -82,6 +82,7 @@ public class Jeu {
             }
             return true;
         }
+        return false; // Cas où carteEnMain est null
     }
 
     public boolean piocher(Couleur couleur) {
