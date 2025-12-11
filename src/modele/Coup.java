@@ -1,8 +1,8 @@
 package modele;
 
 public class Coup {
-    private int indCarte;
-    private TypeCoup typeCoup;
+    private final int indCarte;
+    private final TypeCoup typeCoup;
 
     public Coup(int indice, TypeCoup type) {
         this.indCarte = indice;
