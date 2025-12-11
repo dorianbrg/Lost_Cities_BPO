@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class TestJeu {
     @Test
     public void testInitialisation() {
-        Jeu jeu = new Jeu();
+        Jeu jeu = new Jeu("nom1","nom2");
 
         assertEquals(60,jeu.getPioche().getNbCartes());
         assertEquals(8,jeu.getJoueur(0).getMain().getNbCartes());
@@ -20,4 +20,6 @@ public class TestJeu {
             assertTrue(jeu.getDefausse(c).estVide());
         }
     }
+
+    
 }
