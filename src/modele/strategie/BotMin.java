@@ -6,6 +6,8 @@ import modele.TypeCoup;
 import modele.carte.Carte;
 import modele.carte.Couleur;
 
+import static modele.carte.Carte.COMP_VAL;
+
 public class BotMin implements Strategie {
     public Coup choisirCoup(Jeu jeu) {
         Coup coup;
@@ -15,7 +17,7 @@ public class BotMin implements Strategie {
                 coup = new Coup(ind, TypeCoup.JOUER);
             }
         }
-        jeu.getJoueurCourant().getMain().sort()
+        jeu.getJoueurCourant().getMain().(COMP_VAL);
     }
 
 

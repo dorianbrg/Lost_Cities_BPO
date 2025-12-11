@@ -3,6 +3,8 @@ package modele.carte;
 import java.util.*;
 import java.util.stream.Stream;
 
+import static modele.carte.Carte.COMP_VAL;
+
 abstract public class PaquetBase implements Paquet {
     private List<Carte> paquet;
 
@@ -32,7 +34,11 @@ abstract public class PaquetBase implements Paquet {
     }
 
     protected void trier() {
-        this.paquet.sort(null); // ordre naturel implémenté dans Carte
+        this.paquet.sort(null);
+        // ordre naturel implémenté dans Carte
+    }
+    protected void trier_val() { // tri par valeurs
+        this.paquet.sort(COMP_VAL);
     }
 
     protected Carte prendrePremiereCarte() {
