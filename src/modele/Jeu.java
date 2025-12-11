@@ -104,4 +104,17 @@ public class Jeu {
         return false;
     }
 
+    public boolean estFini() {
+        return this.pioche.estVide();
+    }
+
+    public void passerJoueurSuivant() {
+        if (joueurCourant == 0) {
+            this.joueurCourant = 1;
+        }
+        else {
+            this.joueurCourant = 0;
+        }
+    }
+
 }
