@@ -83,6 +83,25 @@ public class Jeu {
             return true;
         }
     }
-    
+
+    public boolean piocher(Couleur couleur) {
+        Carte cartePioche;
+        if (couleur == null) {
+            cartePioche = this.pioche.prendreCarte();
+        }
+        else {
+            cartePioche = this.defausses.get(couleur).prendreCarte(); // comment faire en sorte de pas pioche la derniere carte défaussé par le joueur courant?
+        }
+        if (cartePioche != null) {
+            if (joueurCourant == 0) {
+                this.joueur0.getMain().ajouterCartes(cartePioche);
+            }
+            else {
+                this.joueur1.getMain().ajouterCartes(cartePioche);
+            }
+            return true;
+        }
+        return false;
+    }
 
 }
