@@ -1,6 +1,7 @@
 package modele.strategie;
 
 import modele.Coup;
+import modele.Jeu;
 import modele.carte.Couleur;
 
 public interface Strategie {

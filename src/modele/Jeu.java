@@ -13,18 +13,27 @@ public class Jeu {
     private Joueur joueur1;
 
     public Jeu() {
+        // Création et initialisation de la pioche
         this.pioche = new Pioche();
         setPioche();
 
+        // Création et initialisation des défausses
         this.defausses = new HashMap<>();
         for(Couleur c: Couleur.values()) {
             this.defausses.put(c,new Defausse(c));
         }
 
-        
+        // Distribution de 8 cartes de la pioches pour chaque joueur
+        for(int i = 0; i < 8; i++) {
+            this.joueur0.getMain().ajouterCartes(pioche.prendreCarte());
+            this.joueur1.getMain().ajouterCartes(pioche.prendreCarte());
+        }
+
+        // Initialisation du joueur courant;
+        this.joueurCourant = 0;
+
     }
-
-
+    
     private void setPioche() {
         for(Couleur c: Couleur.values()) {
             for (TypeCarte t: TypeCarte.values()) {
