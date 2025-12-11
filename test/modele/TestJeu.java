@@ -13,7 +13,7 @@ public class TestJeu {
     public void testInitialisation() {
         Jeu jeu = new Jeu("nom1","nom2");
 
-        assertEquals(60,jeu.getPioche().getNbCartes());
+        assertEquals(44,jeu.getPioche().getNbCartes()); // 44 cartes car 60 - les cartes distribués aux joueurs
         assertEquals(8,jeu.getJoueur(0).getMain().getNbCartes());
         assertEquals(8,jeu.getJoueur(1).getMain().getNbCartes());
         for(Couleur c: Couleur.values()) {

@@ -46,7 +46,7 @@ public class Jeu {
                     Carte cartePari2 = new Carte(c,t);
                     this.pioche.init(cartePari1, cartePari2);
                 }
-                Carte carte = new Carte(c,t);
+                Carte carte = new Carte(c, t);
                 this.pioche.init(carte);
             }
         }
