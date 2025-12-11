@@ -117,4 +117,30 @@ public class Jeu {
         }
     }
 
+    public Joueur getJoueur(int indice) {
+        if (indice == 0) {
+            return this.joueur0;
+        }
+        else if (indice == 1) {
+            return this.joueur1;
+        }
+        else return null;
+    }
+
+    public Joueur getJoueurCourant() {
+        if (joueurCourant == 0) {
+            return this.joueur0;
+        }
+        else {
+            return this.joueur1;
+        }
+    }
+
+    public Pioche getPioche() {
+        return this.pioche;
+    }
+
+    public Defausse getDefausse(Couleur couleur) {
+        return this.defausses.get(couleur);
+    }
 }
