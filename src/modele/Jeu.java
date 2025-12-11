@@ -12,7 +12,11 @@ public class Jeu {
     private Joueur joueur0;
     private Joueur joueur1;
 
-    public Jeu() {
+    public Jeu(String nom1, String nom2) {
+        // Création des joueurs
+        this.joueur0 = new Joueur(nom1);
+        this.joueur1 = new Joueur(nom1);
+
         // Création et initialisation de la pioche
         this.pioche = new Pioche();
         setPioche();
