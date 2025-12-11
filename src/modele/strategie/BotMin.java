@@ -6,8 +6,6 @@ import modele.TypeCoup;
 import modele.carte.Carte;
 import modele.carte.Couleur;
 
-import static modele.carte.Carte.COMP_VAL;
-
 public class BotMin implements Strategie {
     public Coup choisirCoup(Jeu jeu) {
         Coup coup;
@@ -17,10 +15,12 @@ public class BotMin implements Strategie {
                 coup = new Coup(ind, TypeCoup.JOUER);
             }
         }
-        jeu.getJoueurCourant().getMain().(COMP_VAL);
+
+        jeu.getJoueurCourant().getMain().trierMainVal();
+        coup = new Coup(0,TypeCoup.DEFAUSSER); // On défausse la plus petite carte
+        jeu.getJoueurCourant().getMain().ajouterCartes(); // On ajoute rien mais on retrie les cartes avec l'ordre naturel de base
+        return coup;
     }
-
-
 
     public Couleur choisirPioche(Jeu jeu) {
         return null; // null = pioche principal
