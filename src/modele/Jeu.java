@@ -62,29 +62,14 @@ public class Jeu {
         }
         if ( (coup.getTypeCoup() == TypeCoup.JOUER) && (carteEnMain != null) ) { // Cas où le coup est JOUER
             if (joueurCourant == 0) {
-                if (this.joueur0.getExpedition(carteEnMain.getCouleur()).poser(carteEnMain)) {
-                    this.joueur0.getMain().prendreCarte(coup.getIndCarte());
-                    return true;
-                }
-                else return false; // Coup invalide
+                return this.joueur0.getExpedition(carteEnMain.getCouleur()).poser(carteEnMain);
             }
             else {
-                if (this.joueur1.getExpedition(carteEnMain.getCouleur()).poser(carteEnMain)) {
-                    this.joueur1.getMain().prendreCarte(coup.getIndCarte());
-                    return true;
-                }
-                else return false;
+                return this.joueur1.getExpedition(carteEnMain.getCouleur()).poser(carteEnMain);
             }
         }
         else if ( (coup.getTypeCoup() == TypeCoup.DEFAUSSER) && (carteEnMain != null) ){ // Cas où le coup est DEFAUSSER
-            this.defausses.get(carteEnMain.getCouleur()).poser(carteEnMain);
-            if (joueurCourant == 0) {
-                this.joueur0.getMain().prendreCarte(coup.getIndCarte());
-            }
-            else {
-                this.joueur1.getMain().prendreCarte(coup.getIndCarte());
-            }
-            return true;
+            return this.defausses.get(carteEnMain.getCouleur()).poser(carteEnMain);
         }
         return false; // Cas où carteEnMain est null
     }

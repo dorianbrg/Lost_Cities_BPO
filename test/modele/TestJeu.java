@@ -21,5 +21,14 @@ public class TestJeu {
         }
     }
 
-    
+    @Test
+    public void testCoupValide() {
+        Jeu jeu = new Jeu("nom1","nom2");
+        Coup coupValide = new Coup(0,TypeCoup.JOUER); // tous les coups sont valides si les expéditions sont vides
+
+        assertTrue(jeu.jouer(coupValide));
+        assertEquals(7,jeu.getJoueurCourant().getMain().getNbCartes());
+    }
+
+
 }
