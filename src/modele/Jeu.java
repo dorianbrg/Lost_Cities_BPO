@@ -33,7 +33,7 @@ public class Jeu {
         this.joueurCourant = 0;
 
     }
-    
+
     private void setPioche() {
         for(Couleur c: Couleur.values()) {
             for (TypeCarte t: TypeCarte.values()) {
@@ -47,5 +47,42 @@ public class Jeu {
             }
         }
     }
+
+    public boolean jouer(Coup coup) {
+        Carte carteEnMain;
+        if (joueurCourant == 0) {
+            carteEnMain = this.joueur0.getMain().prendreCarte(coup.getIndCarte());
+        }
+        else {
+            carteEnMain = this.joueur1.getMain().prendreCarte(coup.getIndCarte());
+        }
+        if (coup.getTypeCoup() == TypeCoup.JOUER) { // Cas où le coup est JOUER
+            if (joueurCourant == 0) {
+                if (this.joueur0.getExpedition(carteEnMain.getCouleur()).poser(carteEnMain)) {
+                    this.joueur0.getMain().prendreCarte(coup.getIndCarte());
+                    return true;
+                }
+                else return false; // Coup invalide
+            }
+            else {
+                if (this.joueur1.getExpedition(carteEnMain.getCouleur()).poser(carteEnMain)) {
+                    this.joueur1.getMain().prendreCarte(coup.getIndCarte());
+                    return true;
+                }
+                else return false;
+            }
+        }
+        else { // Cas où le coup est DEFAUSSER
+            this.defausses.get(carteEnMain.getCouleur()).poser(carteEnMain);
+            if (joueurCourant == 0) {
+                this.joueur0.getMain().prendreCarte(coup.getIndCarte());
+            }
+            else {
+                this.joueur1.getMain().prendreCarte(coup.getIndCarte());
+            }
+            return true;
+        }
+    }
+    
 
 }
