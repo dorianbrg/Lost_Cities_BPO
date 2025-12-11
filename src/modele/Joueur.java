@@ -23,15 +23,15 @@ public class Joueur {
         }
     }
 
-    public void setStrategie(Strategie strategie) {
+    private void setStrategie(Strategie strategie) {
         this.strategie = strategie;
     }
 
-    public Coup choisirCoup(Jeu jeu) {
+    private Coup choisirCoup(Jeu jeu) {
         return strategie.choisirCoup(jeu);
     }
 
-    public Couleur choisirPioche(Jeu jeu) {
+    private Couleur choisirPioche(Jeu jeu) {
         return strategie.choisirPioche(jeu);
     }
 
