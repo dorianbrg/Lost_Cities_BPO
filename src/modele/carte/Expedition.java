@@ -15,7 +15,7 @@ public class Expedition extends PaquetCouleur {
                (carte.compareTo(DerCarte) >= 0); // correspondance couleur et valeur croissante du paquet
     }
 
-    int calculerScore() {
+    public int calculerScore() {
         int score = super.cartes()
                 .filter(c -> c.getCouleur() == super.getCouleur())
                 .mapToInt(c -> c.getCarte().getValeur())

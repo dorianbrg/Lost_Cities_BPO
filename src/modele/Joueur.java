@@ -22,4 +22,38 @@ public class Joueur {
             this.expeditions.put(c,new Expedition(c));
         }
     }
+
+    public void setStrategie(Strategie strategie) {
+        this.strategie = strategie;
+    }
+
+    public Coup choisirCoup(Jeu jeu) {
+        return strategie.choisirCoup(jeu);
+    }
+
+    public Couleur choisirPioche(Jeu jeu) {
+        return strategie.choisirPioche(jeu);
+    }
+
+    public int getScore() {
+        int total = 0;
+        for (Couleur couleur : Couleur.values()) {
+            total += getExpedition(couleur).calculerScore();
+        }
+        return total;
+    }
+
+    public Expedition getExpedition(Couleur couleur) {
+        return this.expeditions.get(couleur);
+    }
+
+    public String getNom() {
+        return this.nom;
+    }
+
+    public Main getMain() {
+        return this.main;
+    }
+
+
 }
