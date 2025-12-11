@@ -15,6 +15,9 @@ public class Carte implements Comparable<Carte> {
             Comparator.comparing(Carte::getCouleur)
                     .thenComparingInt(c -> c.getCarte().getValeur());
 
+    private static final Comparator<Carte> COMP_VAL =
+            Comparator.comparingInt(c -> c.getCarte().getValeur());
+
     @Override
     public int compareTo(Carte autre) { // pour l'ordre naturel comme la classe implémente Comparable<Carte>
         return COMP.compare(this,autre);
