@@ -1,5 +1,6 @@
 package modele;
 
+import modele.carte.Carte;
 import modele.carte.Couleur;
 import modele.carte.Expedition;
 import modele.carte.Main;
@@ -13,6 +14,7 @@ public class Joueur {
     private Main main;
     private Strategie strategie;
     private Map<Couleur, Expedition> expeditions;
+    private Carte lastCarteDefausse;
 
     public Joueur(String nom) {
         this.nom = nom;
@@ -21,10 +23,15 @@ public class Joueur {
         for (Couleur c : Couleur.values()) {
             this.expeditions.put(c,new Expedition(c));
         }
+        this.lastCarteDefausse = null;
     }
 
     private void setStrategie(Strategie strategie) {
         this.strategie = strategie;
+    }
+
+    public void setLastCarteDefausse(Carte carte) {
+        this.lastCarteDefausse = carte;
     }
 
     private Coup choisirCoup(Jeu jeu) {
@@ -53,6 +60,10 @@ public class Joueur {
 
     public Main getMain() {
         return this.main;
+    }
+
+    public Carte getLastCarteDefausse() {
+        return this.lastCarteDefausse;
     }
 
 

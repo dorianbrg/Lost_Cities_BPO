@@ -83,13 +83,17 @@ public class Jeu {
             cartePioche = this.defausses.get(couleur).prendreCarte(); // comment faire en sorte de pas pioche la derniere carte défaussé par le joueur courant?
         }
         if (cartePioche != null) {
-            if (joueurCourant == 0) {
+            if ( (joueurCourant == 0) && (cartePioche.compareTo(this.joueur0.getLastCarteDefausse()) != 0) ){
                 this.joueur0.getMain().ajouterCartes(cartePioche);
+                return true;
             }
-            else {
+            else if ( (joueurCourant == 1) && (cartePioche.compareTo(this.joueur1.getLastCarteDefausse()) != 0) ) {
                 this.joueur1.getMain().ajouterCartes(cartePioche);
+                return true;
             }
-            return true;
+            else { // Cas où la carte pioché est l'ancienne défaussé par le jour, or cela ne doit pas être le cas
+                return false;
+            }
         }
         return false;
     }
