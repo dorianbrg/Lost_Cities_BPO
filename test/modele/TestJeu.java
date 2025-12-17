@@ -5,8 +5,7 @@ import modele.carte.Couleur;
 import modele.carte.TypeCarte;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestJeu {
     @Test
@@ -28,6 +27,24 @@ public class TestJeu {
 
         assertTrue(jeu.jouer(coupValide));
         assertEquals(7,jeu.getJoueurCourant().getMain().getNbCartes());
+    }
+
+    @Test
+    public void testCoupInvalide() {
+        Jeu jeu = new Jeu("nom1","nom2");
+        Carte c1 = new Carte(Couleur.JAUNE, TypeCarte.DIX);
+        Coup coupValide = new Coup(0,TypeCoup.JOUER);
+        assertTrue(jeu.getJoueurCourant().getExpedition(Couleur.JAUNE).poser(c1));
+        for(int i = 0;i < 1;i++) {
+            Carte carte_i = jeu.getJoueurCourant().getMain().voirCarte(i);
+            if ((carte_i.getCouleur() == Couleur.JAUNE) && (carte_i.getCarte().getValeur() < 10)) {
+                Coup coupInvalide = new Coup(i,TypeCoup.JOUER);
+                assertFalse(jeu.jouer(coupInvalide));
+            }
+        }
+        assertEquals(8,jeu.getJoueurCourant().getMain().getNbCartes());
+
+
     }
 
 

@@ -55,17 +55,31 @@ public class Jeu {
     public boolean jouer(Coup coup) {
         Carte carteEnMain;
         if (joueurCourant == 0) {
-            carteEnMain = this.joueur0.getMain().prendreCarte(coup.getIndCarte());
+            carteEnMain = this.joueur0.getMain().voirCarte(coup.getIndCarte());
         }
         else {
-            carteEnMain = this.joueur1.getMain().prendreCarte(coup.getIndCarte());
+            carteEnMain = this.joueur1.getMain().voirCarte(coup.getIndCarte());
         }
         if ( (coup.getTypeCoup() == TypeCoup.JOUER) && (carteEnMain != null) ) { // Cas où le coup est JOUER
             if (joueurCourant == 0) {
-                return this.joueur0.getExpedition(carteEnMain.getCouleur()).poser(carteEnMain);
+                boolean peutPoser = this.joueur0.getExpedition(carteEnMain.getCouleur()).poser(carteEnMain);
+                if (peutPoser) {
+                    this.joueur0.getMain().prendreCarte(coup.getIndCarte());
+                    return peutPoser;
+                }
+                else {
+                    return false;
+                }
             }
             else {
-                return this.joueur1.getExpedition(carteEnMain.getCouleur()).poser(carteEnMain);
+                boolean peutPoser = this.joueur1.getExpedition(carteEnMain.getCouleur()).poser(carteEnMain);
+                if (peutPoser) {
+                    this.joueur1.getMain().prendreCarte(coup.getIndCarte());
+                    return peutPoser;
+                }
+                else {
+                    return false;
+                }
             }
         }
         else if ( (coup.getTypeCoup() == TypeCoup.DEFAUSSER) && (carteEnMain != null) ){ // Cas où le coup est DEFAUSSER
