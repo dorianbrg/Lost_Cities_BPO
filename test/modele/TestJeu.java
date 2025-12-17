@@ -44,9 +44,16 @@ public class TestJeu {
             }
         }
         assertEquals(8,jeu.getJoueurCourant().getMain().getNbCartes());
-
-
     }
 
+    @Test
+    public void testDefausse() {
+        Jeu jeu = new Jeu("nom1","nom2");
+        Coup coup = new Coup(0,TypeCoup.DEFAUSSER);
+        Carte carteCoup = jeu.getJoueurCourant().getMain().voirCarte(0);
+
+        assertTrue(jeu.jouer(coup));
+        assertFalse(jeu.getDefausse(carteCoup.getCouleur()).estVide());
+    }
 
 }
