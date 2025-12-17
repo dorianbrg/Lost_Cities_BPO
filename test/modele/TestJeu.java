@@ -62,6 +62,7 @@ public class TestJeu {
 
         assertTrue(jeu.piocher(null));
         assertEquals(9,jeu.getJoueurCourant().getMain().getNbCartes());
+        
     }
 
 }
