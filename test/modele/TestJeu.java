@@ -56,4 +56,12 @@ public class TestJeu {
         assertFalse(jeu.getDefausse(carteCoup.getCouleur()).estVide());
     }
 
+    @Test
+    public void testPiochePrincipal() {
+        Jeu jeu = new Jeu("nom1","nom2");
+
+        assertTrue(jeu.piocher(null));
+        assertEquals(9,jeu.getJoueurCourant().getMain().getNbCartes());
+    }
+
 }
