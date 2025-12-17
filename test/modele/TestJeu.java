@@ -30,12 +30,13 @@ public class TestJeu {
     }
 
     @Test
-    public void testCoupInvalide() {
+    public void testCoupInvalide() { // dépend de la distribution des cartes dans la main du joueur courant
         Jeu jeu = new Jeu("nom1","nom2");
         Carte c1 = new Carte(Couleur.JAUNE, TypeCarte.DIX);
         Coup coupValide = new Coup(0,TypeCoup.JOUER);
+
         assertTrue(jeu.getJoueurCourant().getExpedition(Couleur.JAUNE).poser(c1));
-        for(int i = 0;i < 1;i++) {
+        for(int i = 0;i < 8;i++) {
             Carte carte_i = jeu.getJoueurCourant().getMain().voirCarte(i);
             if ((carte_i.getCouleur() == Couleur.JAUNE) && (carte_i.getCarte().getValeur() < 10)) {
                 Coup coupInvalide = new Coup(i,TypeCoup.JOUER);
