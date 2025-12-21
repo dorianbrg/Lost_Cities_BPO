@@ -87,4 +87,18 @@ public class TestJeu {
 
         assertEquals(jeu.getJoueur(1),jeu.getJoueurCourant());
     }
+
+    @Test
+    public void testFin() {
+        Jeu jeu = new Jeu("nom1","nom2");
+
+        assertFalse(jeu.estFini());
+
+        while (!(jeu.getPioche().estVide())) {
+            jeu.piocher(null);
+        }
+
+        assertTrue(jeu.estFini());
+
+    }
 }
