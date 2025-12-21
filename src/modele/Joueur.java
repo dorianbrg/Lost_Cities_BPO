@@ -26,7 +26,7 @@ public class Joueur {
         this.lastCarteDefausse = null;
     }
 
-    private void setStrategie(Strategie strategie) {
+    public void setStrategie(Strategie strategie) {
         this.strategie = strategie;
     }
 
@@ -34,11 +34,11 @@ public class Joueur {
         this.lastCarteDefausse = carte;
     }
 
-    private Coup choisirCoup(Jeu jeu) {
+    public Coup choisirCoup(Jeu jeu) {
         return strategie.choisirCoup(jeu);
     }
 
-    private Couleur choisirPioche(Jeu jeu) {
+    public Couleur choisirPioche(Jeu jeu) {
         return strategie.choisirPioche(jeu);
     }
 
