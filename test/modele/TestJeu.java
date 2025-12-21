@@ -77,5 +77,14 @@ public class TestJeu {
         assertTrue(jeu.piocher(carteJoue.getCouleur()));
     }
 
-    
+    @Test
+    public void testJoueurSuiv() {
+        Jeu jeu = new Jeu("nom1","nom2");
+
+        assertEquals(jeu.getJoueur(0),jeu.getJoueurCourant());
+
+        jeu.passerJoueurSuivant();
+
+        assertEquals(jeu.getJoueur(1),jeu.getJoueurCourant());
+    }
 }
