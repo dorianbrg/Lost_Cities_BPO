@@ -65,4 +65,17 @@ public class TestJeu {
 
     }
 
+    @Test
+    public void testPiocheDefausse() {
+        Jeu jeu = new Jeu("nom1","nom2");
+        Coup coup = new Coup(0,TypeCoup.DEFAUSSER);
+        Carte carteJoue = jeu.getJoueurCourant().getMain().voirCarte(0);
+
+        assertTrue(jeu.getDefausse(carteJoue.getCouleur()).estVide());
+        assertTrue(jeu.jouer(coup));
+        assertFalse(jeu.getDefausse(carteJoue.getCouleur()).estVide());
+        assertTrue(jeu.piocher(carteJoue.getCouleur()));
+    }
+
+    
 }
