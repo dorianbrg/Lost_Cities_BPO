@@ -1,7 +1,11 @@
 package vue;
 
+import modele.Coup;
 import modele.Jeu;
+import modele.TypeCoup;
 import modele.carte.Couleur;
+
+import java.util.Scanner;
 
 public class VueJeuCLI implements VueJeu {
     public void afficher(Jeu jeu) {
@@ -25,5 +29,30 @@ public class VueJeuCLI implements VueJeu {
 
         // Cartes de la pioche restantes
         System.out.println("Il reste " + jeu.getPioche().getNbCartes() + " dans la pioche.");
+    }
+
+    public Coup demanderCoup() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Quelle carte souhaitez-vous jouer ? (renseigner l'indice)");
+        int ind = sc.nextInt();
+        while ((ind < 0) || (ind > 7)) {
+            System.out.println("Veuillez renseigner un indice valide:");
+            ind = sc.nextInt();
+        }
+
+        System.out.println("Souhaitez-vous la joeur ou la défausser ?");
+        String type = sc.nextLine();
+        while ( (!(type.equalsIgnoreCase("Jouer")) && (!type.equalsIgnoreCase("Défausser"))) ) {
+            System.out.println("Veuillez renseigner une action valide (jouer ou défausser):");
+            type = sc.nextLine();
+        }
+
+        if (type.equalsIgnoreCase("Jouer")) {
+            return new Coup(ind, TypeCoup.JOUER);
+        }
+        else if (type.equalsIgnoreCase("Défausser")) {
+            return new Coup(ind, TypeCoup.DEFAUSSER);
+        }
+        return null;
     }
 }
