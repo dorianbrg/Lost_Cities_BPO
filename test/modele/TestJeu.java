@@ -116,13 +116,6 @@ public class TestJeu {
             Couleur pioche = joueur.choisirPioche(jeu);
             jeu.piocher(pioche);
 
-            System.out.println(jeu.getJoueurCourant().getExpedition(Couleur.JAUNE));
-            System.out.println(jeu.getJoueurCourant().getExpedition(Couleur.BLEU));
-            System.out.println(jeu.getJoueurCourant().getExpedition(Couleur.BLANC));
-            System.out.println(jeu.getJoueurCourant().getExpedition(Couleur.ROUGE));
-            System.out.println(jeu.getJoueurCourant().getExpedition(Couleur.VERT));
-            //System.out.println(jeu.getPioche().getNbCartes());
-
             jeu.passerJoueurSuivant();
 
         }
