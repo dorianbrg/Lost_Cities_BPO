@@ -82,7 +82,7 @@ public class VueJeuCLI implements VueJeu {
 
     public void afficherJoueurCourant(Jeu jeu) {
         // Affichage de la main du joueur courant
-        System.out.println("| ");
+        System.out.print("| ");
         for(int i = 0; i < jeu.getJoueurCourant().getMain().getNbCartes(); i++) {
             System.out.print(i + ": " + jeu.getJoueurCourant().getMain().voirCarte(i) + " | ");
         }

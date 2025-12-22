@@ -31,6 +31,22 @@ public class Carte implements Comparable<Carte> {
     }
 
     public String toString() {
-        return this.carte.getValeur() + " " + this.couleur;
+        String res = this.carte.getValeur() + " " + this.couleur;
+        if (this.couleur == Couleur.JAUNE) {
+            return "\u001B[33m" + res + "\u001B[0m";
+        }
+        if (this.couleur == Couleur.BLEU) {
+            return "\u001B[34m" + res + "\u001B[0m";
+        }
+        if (this.couleur == Couleur.ROUGE) {
+            return "\u001B[31m" + res + "\u001B[0m";
+        }
+        if (this.couleur == Couleur.BLANC) {
+            return "\u001B[37m" + res + "\u001B[0m";
+        }
+        if (this.couleur == Couleur.VERT) {
+            return "\u001B[32m" + res + "\u001B[0m";
+        }
+        return res;
     }
 }

@@ -18,9 +18,10 @@ public class ControleJeu {
     public void lancerJeu() {
         while (!jeu.estFini()) {
             // Afficher le joueur courant
+            System.out.println("Au tour de " + jeu.getJoueurCourant().getNom());
             vue.afficherJoueurCourant(jeu);
 
-            // Phase 1: Jouer ou d\éfausser
+            // Phase 1: Jouer ou défausser
             Joueur joueurCourant = jeu.getJoueurCourant();
             Coup coup = joueurCourant.choisirCoup(jeu);
             boolean coupValide = jeu.jouer(coup);
