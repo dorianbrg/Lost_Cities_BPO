@@ -13,6 +13,7 @@ public class BotMin implements Strategie {
             if (jeu.getJoueurCourant().getExpedition(c.getCouleur()).peutPoser(c)) {
                 int ind = jeu.getJoueurCourant().getMain().getIndice(c); // mais ce n'est pas forcément la plus petite carte de toute la main entiere
                 coup = new Coup(ind, TypeCoup.JOUER);
+                return coup;
             }
         }
 
