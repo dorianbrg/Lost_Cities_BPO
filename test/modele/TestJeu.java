@@ -121,7 +121,7 @@ public class TestJeu {
             System.out.println(jeu.getJoueurCourant().getExpedition(Couleur.BLANC));
             System.out.println(jeu.getJoueurCourant().getExpedition(Couleur.ROUGE));
             System.out.println(jeu.getJoueurCourant().getExpedition(Couleur.VERT));
-            System.out.println(jeu.getPioche().getNbCartes());
+            //System.out.println(jeu.getPioche().getNbCartes());
 
             jeu.passerJoueurSuivant();
 

@@ -81,4 +81,13 @@ abstract public class PaquetBase implements Paquet {
     public Iterator<Carte> iterator() { // car Paquet implémente Iterable<Carte>
         return Collections.unmodifiableList(this.paquet).iterator();
     }
+
+    public String toString() {
+        String res = "[";
+        for (Carte c: this.paquet) {
+            res += c.toString() + ",";
+        }
+        return res + "]";
+
+    }
 }
