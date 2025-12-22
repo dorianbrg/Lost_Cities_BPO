@@ -14,11 +14,10 @@ public class Humain implements Strategie {
 
     public Coup choisirCoup(Jeu jeu) {
         vue.afficher();
-        vue.demanderCoup();
-        return Coup();
+        return vue.demanderCoup();
     }
 
     public Couleur choisirPioche(Jeu jeu) {
-        vue.demanderPioche();
+        return vue.demanderPioche();
     }
 }
