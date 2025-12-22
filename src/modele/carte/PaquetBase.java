@@ -87,7 +87,7 @@ abstract public class PaquetBase implements Paquet {
         for (Carte c: this.paquet) {
             res += c.toString() + ",";
         }
-        return res + "]";
+        return res.substring(0, res.length() - 1) + "]";
 
     }
 }
