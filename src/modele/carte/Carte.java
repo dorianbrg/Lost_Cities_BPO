@@ -30,4 +30,7 @@ public class Carte implements Comparable<Carte> {
         return carte;
     }
 
+    public String toString() {
+        return this.carte.getValeur() + " " + this.couleur;
+    }
 }

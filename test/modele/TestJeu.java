@@ -3,6 +3,7 @@ package modele;
 import modele.carte.Carte;
 import modele.carte.Couleur;
 import modele.carte.TypeCarte;
+import modele.strategie.BotMin;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -99,6 +100,37 @@ public class TestJeu {
         }
 
         assertTrue(jeu.estFini());
-
     }
+
+    public static void main(String[] args) {
+        Jeu jeu = new Jeu("Bot1","Bot2");
+        // Configurer les strategies des joueurs
+        jeu.getJoueur(0).setStrategie(new BotMin());
+        jeu.getJoueur(1).setStrategie(new BotMin());
+        while (!jeu.estFini()) {
+            Joueur joueur = jeu.getJoueurCourant();
+
+            Coup coup = joueur.choisirCoup(jeu);
+            jeu.jouer(coup);
+
+            Couleur pioche = joueur.choisirPioche(jeu);
+            jeu.piocher(pioche);
+
+            System.out.println(jeu.getJoueurCourant().getExpedition(Couleur.JAUNE));
+            System.out.println(jeu.getJoueurCourant().getExpedition(Couleur.BLEU));
+            System.out.println(jeu.getJoueurCourant().getExpedition(Couleur.BLANC));
+            System.out.println(jeu.getJoueurCourant().getExpedition(Couleur.ROUGE));
+            System.out.println(jeu.getJoueurCourant().getExpedition(Couleur.VERT));
+            System.out.println(jeu.getPioche().getNbCartes());
+
+            jeu.passerJoueurSuivant();
+
+        }
+        // Afficher les scores finaux
+        System.out.println("Score joueur 0 : " +
+                jeu.getJoueur(0).getScore());
+        System.out.println("Score joueur 1 : " +
+                jeu.getJoueur(1).getScore());
+    }
+
 }
