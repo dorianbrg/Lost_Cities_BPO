@@ -2,6 +2,7 @@ package vue;
 
 import modele.Coup;
 import modele.Jeu;
+import modele.Joueur;
 import modele.TypeCoup;
 import modele.carte.Couleur;
 
@@ -77,5 +78,22 @@ public class VueJeuCLI implements VueJeu {
         }
         System.out.println("Je n'ai pas trouvé la pioche");
         return null;
+    }
+
+    public void afficherJoueurCourant(Jeu jeu) {
+        // Affichage de la main du joueur courant
+        System.out.println("| ");
+        for(int i = 0; i < jeu.getJoueurCourant().getMain().getNbCartes(); i++) {
+            System.out.print(i + ": " + jeu.getJoueurCourant().getMain().voirCarte(i) + " | ");
+        }
+    }
+
+    public void afficherScores(Jeu jeu) {
+        Joueur j0 = jeu.getJoueur(0);
+        Joueur j1 = jeu.getJoueur(1);
+        System.out.println("Score de " + j0.getNom() + " : " +
+                j0.getScore());
+        System.out.println("Score de " + j1.getNom() + " : " +
+                j1.getScore());
     }
 }
