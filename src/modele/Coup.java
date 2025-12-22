@@ -16,4 +16,8 @@ public class Coup {
     public TypeCoup getTypeCoup() {
         return typeCoup;
     }
+
+    public String toString() {
+        return "Coup: carte " + indCarte + " -> " + typeCoup;
+    }
 }

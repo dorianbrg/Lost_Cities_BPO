@@ -14,7 +14,7 @@ abstract public class PaquetCouleur extends PaquetBase {
 
     public boolean poser(Carte carte) {
        if (peutPoser(carte)) {
-           ajouterCartes(carte);
+           super.ajouterCartes(carte);
            return true;
         }
        return false;
