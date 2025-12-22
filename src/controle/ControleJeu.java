@@ -19,7 +19,7 @@ public class ControleJeu {
         while (!jeu.estFini()) {
             // Afficher le joueur courant
             vue.afficherJoueurCourant(jeu);
-            
+
             // Phase 1: Jouer ou d\éfausser
             Joueur joueurCourant = jeu.getJoueurCourant();
             Coup coup = joueurCourant.choisirCoup(jeu);
