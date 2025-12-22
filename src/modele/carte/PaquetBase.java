@@ -83,11 +83,11 @@ abstract public class PaquetBase implements Paquet {
     }
 
     public String toString() {
-        String res = "[";
+        String res = "";
         for (Carte c: this.paquet) {
             res += c.toString() + ",";
         }
-        return res.substring(0, res.length() - 1) + "]";
+        return "[" + res.substring(0, res.length() - 1) + "]";
 
     }
 }

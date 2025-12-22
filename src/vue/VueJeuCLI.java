@@ -18,9 +18,6 @@ public class VueJeuCLI implements VueJeu {
             }
         }
 
-        // Affichage de la main du joueur courant
-        System.out.println("Main: " + jeu.getJoueurCourant().getMain());
-
         // Défausses
         System.out.println("Les cartes visibles des défausses sont:");
         System.out.println("| ");
@@ -82,10 +79,11 @@ public class VueJeuCLI implements VueJeu {
 
     public void afficherJoueurCourant(Jeu jeu) {
         // Affichage de la main du joueur courant
-        System.out.print("| ");
+        System.out.print("Main: | ");
         for(int i = 0; i < jeu.getJoueurCourant().getMain().getNbCartes(); i++) {
             System.out.print(i + ": " + jeu.getJoueurCourant().getMain().voirCarte(i) + " | ");
         }
+        System.out.println("");
     }
 
     public void afficherScores(Jeu jeu) {
