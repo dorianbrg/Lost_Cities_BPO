@@ -94,7 +94,7 @@ public class Jeu {
             cartePioche = this.pioche.prendreCarte();
         }
         else {
-            cartePioche = this.defausses.get(couleur).prendreCarte(); // comment faire en sorte de pas pioche la derniere carte défaussé par le joueur courant?
+            cartePioche = this.defausses.get(couleur).prendreCarte();
         }
         if (cartePioche != null) {
             Carte lastCarteDefJ0 = this.joueur0.getLastCarteDefausse();

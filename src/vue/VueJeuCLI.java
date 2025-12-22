@@ -55,4 +55,27 @@ public class VueJeuCLI implements VueJeu {
         }
         return null;
     }
+
+    public Couleur demanderPioche() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Quelle pioche ? (P pour la principale/la couleur de la défausse choisie sinon)");
+        String pioche = sc.nextLine();
+        while ( (!pioche.equalsIgnoreCase("P")) && (!pioche.equalsIgnoreCase("Jaune")) && (!pioche.equalsIgnoreCase("Blanc")) && (!pioche.equalsIgnoreCase("Bleu")) && (!pioche.equalsIgnoreCase("Rouge")) && (!pioche.equalsIgnoreCase("Vert")) ){
+            System.out.println("Renseignez une pioche valide (P pour la principale/la couleur de la défausse choisie sinon)");
+            pioche = sc.nextLine();
+        }
+
+        if (pioche.equalsIgnoreCase("P")) {
+            return null;
+        }
+        else {
+            for(Couleur c: Couleur.values()) {
+                if (pioche.equalsIgnoreCase("" + c)) {
+                    return c;
+                }
+            }
+        }
+        System.out.println("Je n'ai pas trouvé la pioche");
+        return null;
+    }
 }
