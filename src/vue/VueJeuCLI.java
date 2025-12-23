@@ -20,19 +20,20 @@ public class VueJeuCLI implements VueJeu {
         }
 
         // Défausses
-        System.out.println("Les cartes visibles des défausses sont:");
-        System.out.println("| ");
+        System.out.println("Défausses vues du haut:");
+        System.out.print("| ");
         for(Couleur c: Couleur.values()) {
             System.out.print(jeu.getDefausse(c).voirPremiereCarte() + " | ");
         }
+        System.out.println("");
 
         // Cartes de la pioche restantes
-        System.out.println("Il reste " + jeu.getPioche().getNbCartes() + " dans la pioche.");
+        System.out.println("Il reste " + jeu.getPioche().getNbCartes() + " dans la pioche principale.");
     }
 
     public Coup demanderCoup() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Quelle carte souhaitez-vous jouer ? (renseigner l'indice)");
+        System.out.println("Quelle carte souhaitez-vous jouer ? (donner l'indice)");
         int ind = sc.nextInt();
         while ((ind < 0) || (ind > 7)) {
             System.out.println("Veuillez renseigner un indice valide:");
