@@ -83,7 +83,14 @@ public class Jeu {
             }
         }
         else if ( (coup.getTypeCoup() == TypeCoup.DEFAUSSER) && (carteEnMain != null) ){ // Cas où le coup est DEFAUSSER
-            return this.defausses.get(carteEnMain.getCouleur()).poser(carteEnMain);
+            if (joueurCourant == 0) {
+                this.joueur0.getMain().prendreCarte(coup.getIndCarte());
+                return this.defausses.get(carteEnMain.getCouleur()).poser(carteEnMain);
+            }
+            else {
+                this.joueur1.getMain().prendreCarte(coup.getIndCarte());
+                return this.defausses.get(carteEnMain.getCouleur()).poser(carteEnMain);
+            }
         }
         return false; // Cas où carteEnMain est null
     }

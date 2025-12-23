@@ -40,7 +40,7 @@ public class VueJeuCLI implements VueJeu {
             ind = sc.nextInt();
         }
 
-        System.out.println("Souhaitez-vous la joeur ou la défausser ?");
+        System.out.println("Souhaitez-vous la jouer ou la défausser ?");
         String type = sc.nextLine();
         while ( (!(type.equalsIgnoreCase("Jouer")) && (!type.equalsIgnoreCase("Défausser"))) ) {
             System.out.println("Veuillez renseigner une action valide (jouer ou défausser):");
@@ -57,8 +57,9 @@ public class VueJeuCLI implements VueJeu {
     }
 
     public Couleur demanderPioche() {
+        System.out.println("Votre carte a été joué, il faut piocher une carte.");
         Scanner sc = new Scanner(System.in);
-        System.out.println("Quelle pioche ? (P pour la principale/la couleur de la défausse choisie sinon)");
+        System.out.println("Depuis quelle pioche ? (P pour la principale/la couleur de la défausse choisie sinon)");
         String pioche = sc.nextLine();
         while ( (!pioche.equalsIgnoreCase("P")) && (!pioche.equalsIgnoreCase("Jaune")) && (!pioche.equalsIgnoreCase("Blanc")) && (!pioche.equalsIgnoreCase("Bleu")) && (!pioche.equalsIgnoreCase("Rouge")) && (!pioche.equalsIgnoreCase("Vert")) ){
             System.out.println("Renseignez une pioche valide (P pour la principale/la couleur de la défausse choisie sinon)");
