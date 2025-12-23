@@ -85,10 +85,12 @@ public class Jeu {
         else if ( (coup.getTypeCoup() == TypeCoup.DEFAUSSER) && (carteEnMain != null) ){ // Cas où le coup est DEFAUSSER
             if (joueurCourant == 0) {
                 this.joueur0.getMain().prendreCarte(coup.getIndCarte());
+                this.joueur0.setLastCarteDefausse(carteEnMain);
                 return this.defausses.get(carteEnMain.getCouleur()).poser(carteEnMain);
             }
             else {
                 this.joueur1.getMain().prendreCarte(coup.getIndCarte());
+                this.joueur1.setLastCarteDefausse(carteEnMain);
                 return this.defausses.get(carteEnMain.getCouleur()).poser(carteEnMain);
             }
         }

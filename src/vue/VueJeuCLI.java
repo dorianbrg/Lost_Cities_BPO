@@ -39,6 +39,7 @@ public class VueJeuCLI implements VueJeu {
             System.out.println("Veuillez renseigner un indice valide:");
             ind = sc.nextInt();
         }
+        sc.nextLine(); //vide le \n restant sinon on rentrait dans le 2ème while automatiquement
 
         System.out.println("Souhaitez-vous la jouer ou la défausser ?");
         String type = sc.nextLine();

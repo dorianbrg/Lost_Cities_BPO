@@ -27,14 +27,19 @@ public class ControleJeu {
             boolean coupValide = jeu.jouer(coup);
 
             while (!(coupValide)) { // Si le coup est invalide, on redemande
-                System.err.println("Ce coup est invalide, veuillez en refaire un.");
+                System.out.println("Ce coup est invalide, veuillez en refaire un.");
                 coup = joueurCourant.choisirCoup(jeu);
                 coupValide = jeu.jouer(coup);
             }
 
             // Phase 2: Piocher
             Couleur pioche = joueurCourant.choisirPioche(jeu);
-            jeu.piocher(pioche);
+            boolean piocheValide = jeu.piocher(pioche);
+            while (!(piocheValide)) { // Si le coup est invalide, on redemande
+                System.out.println("Ce coup est invalide, veuillez en refaire un.");
+                pioche = joueurCourant.choisirPioche(jeu);
+                piocheValide = jeu.piocher(pioche);
+            }
 
             // Passer au joueur suivant
             jeu.passerJoueurSuivant();
