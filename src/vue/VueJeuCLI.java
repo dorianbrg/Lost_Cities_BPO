@@ -6,6 +6,7 @@ import modele.Joueur;
 import modele.TypeCoup;
 import modele.carte.Couleur;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class VueJeuCLI implements VueJeu {

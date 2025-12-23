@@ -83,11 +83,17 @@ abstract public class PaquetBase implements Paquet {
     }
 
     public String toString() {
-        String res = "";
-        for (Carte c: this.paquet) {
-            res += c.toString() + ",";
-        }
-        return "[" + res.substring(0, res.length() - 1) + "]";
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
 
+        for (int i = 0; i < this.paquet.size(); i++) {
+            sb.append(this.paquet.get(i));
+            if (i < this.paquet.size() - 1) {
+                sb.append(", ");
+            }
+        }
+
+        sb.append("]");
+        return sb.toString();
     }
 }
