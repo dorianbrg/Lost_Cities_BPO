@@ -18,7 +18,7 @@ public class ControleJeu {
     public void lancerJeu() {
         while (!jeu.estFini()) {
             // Afficher le joueur courant
-            System.out.println("Au tour de " + jeu.getJoueurCourant().getNom());
+            System.out.println("Au tour de " + jeu.getJoueurCourant().getNom() + " !");
             vue.afficherJoueurCourant(jeu);
 
             // Phase 1: Jouer ou défausser
@@ -42,8 +42,12 @@ public class ControleJeu {
             }
 
             // Passer au joueur suivant
+            System.out.println("Tour de " + jeu.getJoueurCourant().getNom() + " fini !");
             jeu.passerJoueurSuivant();
         }
+        vue.afficher(jeu);
+        System.out.println("Le jeu est terminé !");
+
         // Afficher les scores finaux
         vue.afficherScores(jeu);
     }

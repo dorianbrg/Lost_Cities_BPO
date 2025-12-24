@@ -23,7 +23,7 @@ public class VueJeuCLI implements VueJeu {
         System.out.println("Défausses vues du haut:");
         System.out.print("| ");
         for(Couleur c: Couleur.values()) {
-            System.out.print(jeu.getDefausse(c).voirPremiereCarte() + " | ");
+            System.out.print(jeu.getDefausse(c).voirDerniereCarte() + " | ");
         }
         System.out.println("");
 
