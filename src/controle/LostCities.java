@@ -4,6 +4,7 @@ import modele.Jeu;
 import modele.Joueur;
 import modele.strategie.BotMin;
 import modele.strategie.Humain;
+import vue.Statistiques;
 import vue.VueJeu;
 import vue.VueJeuCLI;
 
@@ -55,7 +56,8 @@ public class LostCities {
         }
 
         // Créer le controleur et lancer la partie
-        ControleJeu controle = new ControleJeu(jeu, vue);
+        Statistiques stats_generales = new Statistiques();
+        ControleJeu controle = new ControleJeu(jeu, vue, stats_generales);
         controle.lancerJeu();
     }
 

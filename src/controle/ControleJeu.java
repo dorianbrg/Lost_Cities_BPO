@@ -11,14 +11,15 @@ import vue.VueJeu;
 public class ControleJeu {
     private Jeu jeu;
     private VueJeu vue;
+    private Statistiques stats;
 
-    public ControleJeu(Jeu jeu, VueJeu vue) {
+    public ControleJeu(Jeu jeu, VueJeu vue, Statistiques stats) {
         this.jeu = jeu;
         this.vue = vue;
+        this.stats = stats;
     }
 
     public void lancerJeu() {
-        Statistiques stats_partie = new Statistiques();
         while (!jeu.estFini()) {
             // Afficher le joueur courant
             System.out.println("Au tour de " + jeu.getJoueurCourant().getNom() + " !");
@@ -29,7 +30,10 @@ public class ControleJeu {
             Coup coup = joueurCourant.choisirCoup(jeu);
             boolean coupValide = jeu.jouer(coup);
             if ( (coupValide) && (coup.getTypeCoup() == TypeCoup.JOUER) ) { // On incrémente le nombre de cartes jouées
-                stats_partie.incrCartesJouees();
+                stats.incrCartesJouees();
+            }
+            else if ( (coupValide) && (coup.getTypeCoup() == TypeCoup.DEFAUSSER) ) { // On incrémente le nombre de cartes jouées
+                stats.incrCartesDef();
             }
 
             while (!(coupValide)) { // Si le coup est invalide, on redemande
@@ -37,7 +41,10 @@ public class ControleJeu {
                 coup = joueurCourant.choisirCoup(jeu);
                 coupValide = jeu.jouer(coup);
                 if ( (coupValide) && (coup.getTypeCoup() == TypeCoup.JOUER) ) {
-                    stats_partie.incrCartesJouees();
+                    stats.incrCartesJouees();
+                }
+                else if ( (coupValide) && (coup.getTypeCoup() == TypeCoup.DEFAUSSER) ) { // On incrémente le nombre de cartes jouées
+                    stats.incrCartesDef();
                 }
             }
 
@@ -61,7 +68,7 @@ public class ControleJeu {
         vue.afficherScores(jeu);
 
         // Afficher les statistiques de la partie
-        vue.afficherStats(jeu);
+        vue.afficherStats(stats);
     }
 
 }

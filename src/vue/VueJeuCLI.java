@@ -99,8 +99,10 @@ public class VueJeuCLI implements VueJeu {
                 j1.getScore());
     }
 
-    public void afficherStat(Jeu jeu) {
-        Joueur j0 = jeu.getJoueur(0);
-        Joueur j1 = jeu.getJoueur(1);
+    public void afficherStats(Statistiques stats) {
+        System.out.println("Statistiques au bout de n parties:");
+        System.out.println("Nombre de cartes jouées:" + stats.getCartesJouees());
+        System.out.println("Nombre de cartes défaussées:" + stats.getCartesDef());
+
     }
 }

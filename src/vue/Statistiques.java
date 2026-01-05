@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Statistiques {
     private int cartesJouees;
+    private int cartesDef;
     private List<Integer> scoreMoyenExp = new ArrayList<>();
     private double VicBotMin;
     private double VicBotDefausse;
@@ -14,7 +15,7 @@ public class Statistiques {
     }
 
     public int getCartesDef() {
-        return 44 - cartesJouees;
+        return cartesDef;
     }
     public List<Integer> getScoreMoyenExp() {
         return scoreMoyenExp;
@@ -26,6 +27,14 @@ public class Statistiques {
 
     public void incrCartesJouees() {
         this.cartesJouees += 1;
+    }
+
+    public void incrCartesDef() {
+        this.cartesDef += 1;
+    }
+
+    public void updateScoreMoy() {
+
     }
 
     public double getVicBotDefausse() {
