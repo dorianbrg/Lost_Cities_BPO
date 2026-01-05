@@ -59,6 +59,20 @@ public class LostCities {
         Statistiques stats_generales = new Statistiques();
         ControleJeu controle = new ControleJeu(jeu, vue, stats_generales);
         controle.lancerJeu();
+
+        // Rejouer
+        Scanner sc2 = new Scanner(System.in);
+        System.out.println("Voulez-vous rejouer une partie ?");
+        String rep = sc2.nextLine();
+        while ( (!rep.equalsIgnoreCase("Oui")) && (!rep.equalsIgnoreCase("Non")) ) {
+            System.out.println("Voulez-vous rejouer une partie ? (oui ou non)");
+            rep = sc2.nextLine();
+        }
+        if (rep.equalsIgnoreCase("oui") ) {
+
+        }
+
+
     }
 
 }

@@ -69,6 +69,10 @@ public class ControleJeu {
 
         // Afficher les statistiques de la partie
         vue.afficherStats(stats);
+
+
+
+
     }
 
 }
