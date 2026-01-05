@@ -98,4 +98,9 @@ public class VueJeuCLI implements VueJeu {
         System.out.println("Score de " + j1.getNom() + " : " +
                 j1.getScore());
     }
+
+    public void afficherStat(Jeu jeu) {
+        Joueur j0 = jeu.getJoueur(0);
+        Joueur j1 = jeu.getJoueur(1);
+    }
 }

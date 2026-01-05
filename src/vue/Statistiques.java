@@ -24,6 +24,10 @@ public class Statistiques {
         return VicBotMin;
     }
 
+    public void incrCartesJouees() {
+        this.cartesJouees += 1;
+    }
+
     public double getVicBotDefausse() {
         return VicBotDefausse;
     }

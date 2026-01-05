@@ -3,7 +3,9 @@ package controle;
 import modele.Coup;
 import modele.Jeu;
 import modele.Joueur;
+import modele.TypeCoup;
 import modele.carte.Couleur;
+import vue.Statistiques;
 import vue.VueJeu;
 
 public class ControleJeu {
@@ -16,6 +18,7 @@ public class ControleJeu {
     }
 
     public void lancerJeu() {
+        Statistiques stats_partie = new Statistiques();
         while (!jeu.estFini()) {
             // Afficher le joueur courant
             System.out.println("Au tour de " + jeu.getJoueurCourant().getNom() + " !");
@@ -25,11 +28,17 @@ public class ControleJeu {
             Joueur joueurCourant = jeu.getJoueurCourant();
             Coup coup = joueurCourant.choisirCoup(jeu);
             boolean coupValide = jeu.jouer(coup);
+            if ( (coupValide) && (coup.getTypeCoup() == TypeCoup.JOUER) ) { // On incrémente le nombre de cartes jouées
+                stats_partie.incrCartesJouees();
+            }
 
             while (!(coupValide)) { // Si le coup est invalide, on redemande
                 System.out.println("Ce coup est invalide, veuillez en refaire un.");
                 coup = joueurCourant.choisirCoup(jeu);
                 coupValide = jeu.jouer(coup);
+                if ( (coupValide) && (coup.getTypeCoup() == TypeCoup.JOUER) ) {
+                    stats_partie.incrCartesJouees();
+                }
             }
 
             // Phase 2: Piocher
@@ -50,6 +59,9 @@ public class ControleJeu {
 
         // Afficher les scores finaux
         vue.afficherScores(jeu);
+
+        // Afficher les statistiques de la partie
+        vue.afficherStats(jeu);
     }
 
 }
