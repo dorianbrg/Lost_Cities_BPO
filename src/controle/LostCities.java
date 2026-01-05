@@ -61,18 +61,18 @@ public class LostCities {
         controle.lancerJeu();
 
         // Rejouer
-        Scanner sc2 = new Scanner(System.in);
         System.out.println("Voulez-vous rejouer une partie ?");
-        String rep = sc2.nextLine();
+        String rep = sc.nextLine();
         while ( (!rep.equalsIgnoreCase("Oui")) && (!rep.equalsIgnoreCase("Non")) ) {
             System.out.println("Voulez-vous rejouer une partie ? (oui ou non)");
-            rep = sc2.nextLine();
+            rep = sc.nextLine();
         }
+
         if (rep.equalsIgnoreCase("oui") ) {
-
+            main(args);
         }
-
-
+        // else on ne fait rien le jeu est fini et l'utilisateur ne veut plus rejouer.
+        sc.close();
     }
 
 }
