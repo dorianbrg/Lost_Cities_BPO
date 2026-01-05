@@ -100,7 +100,7 @@ public class VueJeuCLI implements VueJeu {
     }
 
     public void afficherStats(Statistiques stats) {
-        System.out.println("Statistiques au bout de n parties:");
+        System.out.println("Statistiques au bout de " + stats.getNbParties() + " parties:");
         System.out.println("Nombre de cartes jouées:" + stats.getCartesJouees());
         System.out.println("Nombre de cartes défaussées:" + stats.getCartesDef());
 

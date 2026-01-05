@@ -63,6 +63,7 @@ public class ControleJeu {
         }
         vue.afficher(jeu);
         System.out.println("Le jeu est terminé !");
+        stats.incrParties(); // La partie est finie, on incrémente le nombre de parties
 
         // Afficher les scores finaux
         vue.afficherScores(jeu);
