@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Statistiques {
+    private int nbParties;
     private int cartesJouees;
     private int cartesDef;
     private List<Integer> scoreMoyenExp = new ArrayList<>();
@@ -26,11 +27,19 @@ public class Statistiques {
     }
 
     public void incrCartesJouees() {
-        this.cartesJouees += 1;
+        cartesJouees += 1;
     }
 
     public void incrCartesDef() {
-        this.cartesDef += 1;
+        cartesDef += 1;
+    }
+
+    public void incrParties() {
+        nbParties += 1;
+    }
+
+    public int getNbParties() {
+        return nbParties;
     }
 
     public void updateScoreMoy() {
