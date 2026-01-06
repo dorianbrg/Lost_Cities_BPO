@@ -152,8 +152,11 @@ public class Jeu {
         if ((this.joueur0.getScore() > this.joueur1.getScore())) {
             return this.joueur0;
         }
-        else {
+        else if ((this.joueur0.getScore() < this.joueur1.getScore())) {
             return this.joueur1;
+        }
+        else { // Cas d'égalité
+            return null;
         }
     }
 
@@ -161,8 +164,11 @@ public class Jeu {
         if ((this.joueur0.getScore() > this.joueur1.getScore())) {
             return this.joueur1;
         }
-        else {
+        else if ((this.joueur0.getScore() < this.joueur1.getScore())) {
             return this.joueur0;
+        }
+        else {
+            return null;
         }
     }
 

@@ -63,19 +63,36 @@ public class ControleJeu {
         }
         vue.afficher(jeu);
         Joueur joueurGagnant = jeu.getJoueurGagnant();
-        Joueur joueurPerdant = jeu.getJoueurPerdant();
-        System.out.println("Le jeu est terminé. " + joueurGagnant.getNom() + " a gagné ! ");
+        Joueur j0 = jeu.getJoueur(0);
+        Joueur j1 = jeu.getJoueur(1);
+
+        if (joueurGagnant == null) {
+            System.out.println("Le jeu est terminé. Egalité entre les 2 joueurs !");
+        }
+        else {
+            System.out.println("Le jeu est terminé. " + joueurGagnant.getNom() + " a gagné ! ");
+        }
 
         // Update des stats
         stats.incrParties(); // La partie est finie, on incrémente le nombre de parties
         stats.updateScoreMoy(jeu); // On incrémente le score de chaque expédition
 
-        String stratGagnant = joueurGagnant.getNomStrategie();
-        String stratPerdant = joueurPerdant.getNomStrategie();
+        String stratGagnant;
+        if (joueurGagnant != null) {
+            stratGagnant = joueurGagnant.getNomStrategie();
+        }
+        else {
+            stratGagnant = null;
+        }
 
-        stats.enregistrerPartie(stratGagnant);
-        stats.enregistrerPartie(stratPerdant);
-        stats.enregistrerVictoire(stratGagnant);
+        // On compte toujours une partie pour chaque joueur
+        stats.enregistrerPartie(j0.getNomStrategie());
+        stats.enregistrerPartie(j1.getNomStrategie());
+
+        // Victoire : seulement s’il y a un gagnant
+        if (stratGagnant != null) {
+            stats.enregistrerVictoire(stratGagnant);
+        }
 
         // Afficher les scores finaux
         vue.afficherScores(jeu);

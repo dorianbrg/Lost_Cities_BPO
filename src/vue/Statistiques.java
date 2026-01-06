@@ -67,7 +67,7 @@ public class Statistiques {
     }
 
     public void enregistrerVictoire(String strategie) {
-        victoires.put(strategie, victoires.get(strategie) + 1);
+            victoires.put(strategie, victoires.get(strategie) + 1);
     }
 
     public double getTauxVictoire(String strategie) {
