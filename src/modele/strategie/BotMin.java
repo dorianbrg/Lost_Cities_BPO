@@ -34,4 +34,8 @@ public class BotMin implements Strategie {
     public Couleur choisirPioche(Jeu jeu) {
         return null; // null = pioche principal
     }
+
+    public String getStrategie() {
+        return "BotMin";
+    }
 }

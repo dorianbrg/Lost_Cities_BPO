@@ -30,6 +30,10 @@ public class Joueur {
         this.strategie = strategie;
     }
 
+    public String getNomStrategie() {
+        return strategie.getStrategie();
+    }
+
     public void setLastCarteDefausse(Carte carte) {
         this.lastCarteDefausse = carte;
     }

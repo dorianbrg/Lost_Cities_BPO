@@ -20,4 +20,9 @@ public class Humain implements Strategie {
     public Couleur choisirPioche(Jeu jeu) {
         return vue.demanderPioche();
     }
+
+    public String getStrategie() {
+        return "Humain";
+    }
+}
 }

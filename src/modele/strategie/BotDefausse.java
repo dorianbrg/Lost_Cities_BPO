@@ -13,4 +13,8 @@ public class BotDefausse implements Strategie {
     public Couleur choisirPioche(Jeu jeu) {
         return null;
     }
+
+    public String getStrategie() {
+        return "BotDef";
+    }
 }
