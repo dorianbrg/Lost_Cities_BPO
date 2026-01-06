@@ -25,4 +25,3 @@ public class Humain implements Strategie {
         return "Humain";
     }
 }
-}

@@ -52,7 +52,7 @@ public class ControleJeu {
             Couleur pioche = joueurCourant.choisirPioche(jeu);
             boolean piocheValide = jeu.piocher(pioche);
             while (!(piocheValide)) { // Si le coup est invalide, on redemande
-                System.out.println("Ce coup est invalide, veuillez en refaire un.");
+                System.out.println("Ce choix de pioche est invalide, veuillez en refaire un.");
                 pioche = joueurCourant.choisirPioche(jeu);
                 piocheValide = jeu.piocher(pioche);
             }

@@ -15,6 +15,18 @@ public class Statistiques {
     private Map<String, Integer> victoires = new HashMap<>();
     private Map<String, Integer> parties = new HashMap<>();
 
+    public Statistiques() {
+        this.nbParties = 0;
+        this.cartesJouees = 0;
+        this.cartesDef = 0;
+        this.victoires.put("Humain",0);
+        this.victoires.put("BotMin",0);
+        this.victoires.put("BotDef",0);
+        this.parties.put("Humain",0);
+        this.parties.put("BotMin",0);
+        this.parties.put("BotDef",0);
+    }
+
     public int getCartesJouees() {
         return cartesJouees;
     }
@@ -51,11 +63,11 @@ public class Statistiques {
     }
 
     public void enregistrerPartie(String strategie) {
-        parties.put(strategie, parties.getOrDefault(strategie,0) + 1);
+        parties.put(strategie, parties.get(strategie) + 1);
     }
 
     public void enregistrerVictoire(String strategie) {
-        victoires.put(strategie, victoires.getOrDefault(strategie,0) + 1);
+        victoires.put(strategie, victoires.get(strategie) + 1);
     }
 
     public double getTauxVictoire(String strategie) {
