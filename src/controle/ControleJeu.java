@@ -64,16 +64,13 @@ public class ControleJeu {
         vue.afficher(jeu);
         System.out.println("Le jeu est terminé !");
         stats.incrParties(); // La partie est finie, on incrémente le nombre de parties
+        stats.updateScoreMoy(jeu);
 
         // Afficher les scores finaux
         vue.afficherScores(jeu);
 
         // Afficher les statistiques de la partie
         vue.afficherStats(stats);
-
-
-
-
     }
 
 }
