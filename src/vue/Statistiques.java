@@ -3,16 +3,14 @@ package vue;
 import modele.Jeu;
 import modele.carte.Couleur;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Statistiques {
     private int nbParties;
     private int cartesJouees;
     private int cartesDef;
-    private Map<Couleur, Integer> scoreMoyenExp = new HashMap<>();
+    private Map<Couleur, Double> scoreMoyenExp = new HashMap<>();
     private double VicBotMin;
     private double VicBotDefausse;
 
@@ -27,7 +25,7 @@ public class Statistiques {
     public void afficherScoreMoyenExp() {
         System.out.print("| ");
         for(Couleur c: Couleur.values()) {
-            System.out.print(c.txt(scoreMoyenExp.get(c) / (2 * nbParties) + " | "));
+            System.out.print(c.txt(scoreMoyenExp.get(c) / (2 * nbParties) + "") + " | ");
         }
         System.out.println("");
     }
@@ -54,8 +52,8 @@ public class Statistiques {
 
     public void updateScoreMoy(Jeu jeu) {
         for(Couleur c: Couleur.values()) {
-            scoreMoyenExp.put(c, scoreMoyenExp.getOrDefault(c, 0) + jeu.getJoueur(0).getExpedition(c).calculerScore());
-            scoreMoyenExp.put(c, scoreMoyenExp.getOrDefault(c, 0) + jeu.getJoueur(1).getExpedition(c).calculerScore());
+            scoreMoyenExp.put(c, scoreMoyenExp.getOrDefault(c, 0.0) + jeu.getJoueur(0).getExpedition(c).calculerScore());
+            scoreMoyenExp.put(c, scoreMoyenExp.getOrDefault(c, 0.0) + jeu.getJoueur(1).getExpedition(c).calculerScore());
         }
     }
 

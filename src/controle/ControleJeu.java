@@ -63,8 +63,10 @@ public class ControleJeu {
         }
         vue.afficher(jeu);
         System.out.println("Le jeu est terminé !");
+
+        // Update des stats
         stats.incrParties(); // La partie est finie, on incrémente le nombre de parties
-        stats.updateScoreMoy(jeu);
+        stats.updateScoreMoy(jeu); // On incrémente le score de chaque expédition
 
         // Afficher les scores finaux
         vue.afficherScores(jeu);
