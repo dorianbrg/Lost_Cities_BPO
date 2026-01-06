@@ -23,12 +23,8 @@ public class Statistiques {
         return cartesDef;
     }
 
-    public void afficherScoreMoyenExp() {
-        System.out.print("| ");
-        for(Couleur c: Couleur.values()) {
-            System.out.print(c.txt(scoreMoyenExp.get(c) / (2 * nbParties) + "") + " | ");
-        }
-        System.out.println("");
+    public Map<Couleur, Double> getScoreMoyenExp() {
+        return scoreMoyenExp;
     }
 
     public void incrCartesJouees() {

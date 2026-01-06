@@ -99,12 +99,19 @@ public class VueJeuCLI implements VueJeu {
                 j1.getScore());
     }
 
+    public void afficherScoreMoyenExp(Statistiques stats) {
+        System.out.print("| ");
+        for(Couleur c: Couleur.values()) {
+            System.out.print(c.txt(stats.getScoreMoyenExp().get(c) / (2 * stats.getNbParties()) + "") + " | ");
+        }
+        System.out.println("");
+    }
     public void afficherStats(Statistiques stats) {
         System.out.println("----------Statistiques au bout de " + stats.getNbParties() + " partie(s)----------");
         System.out.println("Nombre de cartes jouées: " + stats.getCartesJouees());
         System.out.println("Nombre de cartes défaussées: " + stats.getCartesDef());
         System.out.println("Score moyen par expédition:");
-        stats.afficherScoreMoyenExp();
+        afficherScoreMoyenExp(stats);
         System.out.println("Taux de victoires des différentes stratégies:");
         System.out.println("Humain: " + stats.getTauxVictoire("Humain"));
         System.out.println("BotMin: " + stats.getTauxVictoire("BotMin"));
