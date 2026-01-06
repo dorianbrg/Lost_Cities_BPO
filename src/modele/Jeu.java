@@ -148,6 +148,24 @@ public class Jeu {
         }
     }
 
+    public Joueur getJoueurGagnant() {
+        if ((this.joueur0.getScore() > this.joueur1.getScore())) {
+            return this.joueur0;
+        }
+        else {
+            return this.joueur1;
+        }
+    }
+
+    public Joueur getJoueurPerdant() {
+        if ((this.joueur0.getScore() > this.joueur1.getScore())) {
+            return this.joueur1;
+        }
+        else {
+            return this.joueur0;
+        }
+    }
+
     public Joueur getJoueur(int indice) {
         if (indice == 0) {
             return this.joueur0;

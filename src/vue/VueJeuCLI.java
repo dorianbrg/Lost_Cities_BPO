@@ -105,6 +105,10 @@ public class VueJeuCLI implements VueJeu {
         System.out.println("Nombre de cartes défaussées: " + stats.getCartesDef());
         System.out.println("Score moyen par expédition:");
         stats.afficherScoreMoyenExp();
+        System.out.println("Taux de victoires des différentes stratégies:");
+        System.out.println("Humain: " + stats.getTauxVictoire("Humain"));
+        System.out.println("BotMin: " + stats.getTauxVictoire("BotMin"));
+        System.out.println("BotDéfausse: " + stats.getTauxVictoire("BotDef"));
 
     }
 }

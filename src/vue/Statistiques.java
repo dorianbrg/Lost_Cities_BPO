@@ -1,6 +1,7 @@
 package vue;
 
 import modele.Jeu;
+import modele.Joueur;
 import modele.carte.Couleur;
 
 import java.util.HashMap;
@@ -11,8 +12,8 @@ public class Statistiques {
     private int cartesJouees;
     private int cartesDef;
     private Map<Couleur, Double> scoreMoyenExp = new HashMap<>();
-    private double VicBotMin;
-    private double VicBotDefausse;
+    private Map<String, Integer> victoires = new HashMap<>();
+    private Map<String, Integer> parties = new HashMap<>();
 
     public int getCartesJouees() {
         return cartesJouees;
@@ -28,10 +29,6 @@ public class Statistiques {
             System.out.print(c.txt(scoreMoyenExp.get(c) / (2 * nbParties) + "") + " | ");
         }
         System.out.println("");
-    }
-
-    public double getVicBotMin() {
-        return VicBotMin;
     }
 
     public void incrCartesJouees() {
@@ -57,7 +54,18 @@ public class Statistiques {
         }
     }
 
-    public double getVicBotDefausse() {
-        return VicBotDefausse;
+    public void enregistrerPartie(String strategie) {
+        parties.put(strategie, parties.getOrDefault(strategie,0) + 1);
     }
+
+    public void enregistrerVictoire(String strategie) {
+        victoires.put(strategie, victoires.getOrDefault(strategie,0) + 1);
+    }
+
+    public double getTauxVictoire(String strategie) {
+        int p = parties.get(strategie);
+        if (p == 0) return 0.0;
+        return (victoires.get(strategie) * 100.0) / p;
+    }
+
 }

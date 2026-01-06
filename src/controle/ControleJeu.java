@@ -62,11 +62,20 @@ public class ControleJeu {
             jeu.passerJoueurSuivant();
         }
         vue.afficher(jeu);
-        System.out.println("Le jeu est terminé !");
+        Joueur joueurGagnant = jeu.getJoueurGagnant();
+        Joueur joueurPerdant = jeu.getJoueurPerdant();
+        System.out.println("Le jeu est terminé. " + joueurGagnant.getNom() + " a gagné ! ");
 
         // Update des stats
         stats.incrParties(); // La partie est finie, on incrémente le nombre de parties
         stats.updateScoreMoy(jeu); // On incrémente le score de chaque expédition
+
+        String stratGagnant = joueurGagnant.getNomStrategie();
+        String stratPerdant = joueurPerdant.getNomStrategie();
+
+        stats.enregistrerPartie(stratGagnant);
+        stats.enregistrerPartie(stratPerdant);
+        stats.enregistrerVictoire(stratGagnant);
 
         // Afficher les scores finaux
         vue.afficherScores(jeu);
