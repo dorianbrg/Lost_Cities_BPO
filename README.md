@@ -4,7 +4,7 @@
 - Tout se passe par la suite dans la console ainsi créée.
 - Avant que le jeu débute, il vous faudra renseigner le nom des joueurs ainsi que le type des joueurs (Humain, BotMin, BotDéfausse...) avec l'écriture précisée dans les input (les saisies ne sont pas sensibles à la casse).
 
-![alt text](image.png)
+![alt text](images/image.png)
 
 ## A chaque tour de jeu d'un joueur,
 - Si le joueur est un "Humain" (stratégie du joueur):
@@ -36,15 +36,17 @@
 
 - Affichage du gagnant (ou pas, s'il y a égalité) dans la console.
 - Affichage du détail des points.
+
 ![alt text](images/image-3.png)
 
 - Affichage des statistiques (accumulées au fil des parties si plusieurs parties):
-    - Nombre de cartes jouéées/défaussées
-    - Score moyen par expédition pour un joueur (pas une partie)
-    - Taux de victoire pour chacune des stratégie
-![alt text](images/image-4.png)
+    - Nombre de cartes jouées/défaussées.
+    - Score moyen par expédition pour un joueur (pas une partie).
+    - Taux de victoire pour chacune des stratégies.
+    ![alt text](images/image-4.png)
 
-- Possibilité de rejouer une partie
+- Possibilité de rejouer une partie.
+![alt text](images/image-5.png)
 
 
 
