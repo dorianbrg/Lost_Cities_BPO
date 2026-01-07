@@ -1,12 +1,13 @@
 # LostCities BERGER Dorian
 
-- Pour lancer le jeu, il suffit de run le main de la classe LostCities.
-- Tout se passe par la suite dans la console ainsi créée.
+- Pour lancer le jeu (sur IntelliJ), il suffit de run le main de la classe LostCities (Ctrl + F5).
+- Tout se passe par la suite dans la console qui sera par la suite visible.
 - Avant que le jeu débute, il vous faudra renseigner le nom des joueurs ainsi que le type des joueurs (Humain, BotMin, BotDéfausse...) avec l'écriture précisée dans les input (les saisies ne sont pas sensibles à la casse).
 
 ![alt text](images/image.png)
 
-## A chaque tour de jeu d'un joueur,
+## A chaque tour de jeu d'un joueur
+
 - Si le joueur est un "Humain" (stratégie du joueur):
     - Sa main triée sera affichée avec l'indice de chacune des cartes.
     - Les expéditions seront affichées des 2 joueurs seront affichées.
@@ -42,7 +43,7 @@
 - Affichage des statistiques (accumulées au fil des parties si plusieurs parties):
     - Nombre de cartes jouées/défaussées.
     - Score moyen par expédition pour un joueur (pas une partie).
-    - Taux de victoire pour chacune des stratégies.
+    - Taux de victoires pour chacune des stratégies.
 
 ![alt text](images/image-4.png)
 

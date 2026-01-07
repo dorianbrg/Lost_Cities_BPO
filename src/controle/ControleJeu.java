@@ -59,10 +59,11 @@ public class ControleJeu {
 
             // Passer au joueur suivant
             System.out.println("Tour de " + jeu.getJoueurCourant().getNom() + " fini !");
+            System.out.println("----------------------------------------");
             jeu.passerJoueurSuivant();
         }
         vue.afficher(jeu);
-        System.out.println("----------Fin de partie----------");
+        System.out.println("-------------Fin de partie-------------");
         Joueur joueurGagnant = jeu.getJoueurGagnant();
         Joueur j0 = jeu.getJoueur(0);
         Joueur j1 = jeu.getJoueur(1);
