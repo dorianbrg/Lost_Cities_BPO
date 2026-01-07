@@ -6,7 +6,7 @@ import modele.carte.Couleur;
 import vue.VueJeu;
 
 public class Humain implements Strategie {
-    private VueJeu vue;
+    private final VueJeu vue;
 
     public Humain(VueJeu vue) {
         this.vue = vue;

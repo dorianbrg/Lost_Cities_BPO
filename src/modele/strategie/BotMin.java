@@ -10,8 +10,9 @@ public class BotMin implements Strategie {
     public Coup choisirCoup(Jeu jeu) {
         Coup coup;
         Carte minCarte = null;
+        // On détermine ici la plus petite carte jouable de la main par valeur
         for (Carte c: jeu.getJoueurCourant().getMain()) {
-            if (jeu.getJoueurCourant().getExpedition(c.getCouleur()).peutPoser(c)) {
+            if (jeu.getJoueurCourant().getExpedition(c.getCouleur()).peutPoser(c)) { // Pour filtrer les cartes jouables
                 if ((minCarte == null) || (minCarte.getCarte().getValeur() > c.getCarte().getValeur()) ) {
                     minCarte = c;
                 }
@@ -24,10 +25,10 @@ public class BotMin implements Strategie {
         }
         else { // Aucune carte jouable, on défausse la plus petite
 
-            jeu.getJoueurCourant().getMain().trierMainVal(); // On tri par valeurs pour récupérer la plus petite carte
-            coup = new Coup(0, TypeCoup.DEFAUSSER); // On défausse la plus petite carte
-            jeu.getJoueurCourant().getMain().ajouterCartes(); // On ajoute rien mais on retrie les cartes avec l'ordre naturel de base (méthode trier())
-            return coup;
+            jeu.getJoueurCourant().getMain().trierMainVal(); // On trie ici par valeurs pour récupérer la plus petite carte, il s'agit d'une deuxième méthode pour obtenir les cartes par valeur
+            Carte ppCarte = jeu.getJoueurCourant().getMain().voirCarte(0); // On récupère la plus petite carte
+            jeu.getJoueurCourant().getMain().ajouterCartes(); // On ajoute rien mais on retrie les cartes avec l'ordre naturel de base (méthode trier()) après l'avoir trié par valeurs (sécurité supplémentaire)
+            return new Coup(jeu.getJoueurCourant().getMain().getIndice(ppCarte), TypeCoup.DEFAUSSER); // On défausse la plus petite carte
         }
     }
 

@@ -9,9 +9,9 @@ import vue.Statistiques;
 import vue.VueJeu;
 
 public class ControleJeu {
-    private Jeu jeu;
-    private VueJeu vue;
-    private Statistiques stats;
+    private final Jeu jeu;
+    private final VueJeu vue;
+    private final Statistiques stats;
 
     public ControleJeu(Jeu jeu, VueJeu vue, Statistiques stats) {
         this.jeu = jeu;
@@ -91,7 +91,7 @@ public class ControleJeu {
         stats.enregistrerPartie(j0.getNomStrategie());
         stats.enregistrerPartie(j1.getNomStrategie());
 
-        // Victoire : seulement s’il y a un gagnant
+        // Victoire: seulement s’il y a un gagnant
         if (stratGagnant != null) {
             stats.enregistrerVictoire(stratGagnant);
         }

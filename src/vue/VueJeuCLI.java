@@ -37,7 +37,7 @@ public class VueJeuCLI implements VueJeu {
         Scanner sc = new Scanner(System.in);
         System.out.println("Quelle carte souhaitez-vous jouer ? (donner l'indice)");
         int ind = sc.nextInt();
-        while ((ind < 0) || (ind > 7)) {
+        while ((ind < 0) || (ind > 7)) { // tant que l'indice est invalide, on redemande
             System.out.println("Veuillez renseigner un indice valide:");
             ind = sc.nextInt();
         }
@@ -74,12 +74,12 @@ public class VueJeuCLI implements VueJeu {
         }
         else {
             for(Couleur c: Couleur.values()) {
-                if (pioche.equalsIgnoreCase("" + c)) {
+                if (pioche.equalsIgnoreCase("" + c)) { // vérifie que la saisie correspond bien à une couleur de défausse
                     return c;
                 }
             }
         }
-        System.out.println("Je n'ai pas trouvé la pioche");
+        System.out.println("Je n'ai pas trouvé la pioche"); // Sécurtié supplémentaire mais la boucle while qui redemande indéfiniment la saisie bloque cette possibilité en soit.
         return null;
     }
 
@@ -101,6 +101,7 @@ public class VueJeuCLI implements VueJeu {
                 j1.getScore());
     }
 
+    // Méthode affichant les scores moyens par expédition pour un joueur au fur et à mesure des parties
     public void afficherScoreMoyenExp(Statistiques stats) {
         System.out.print("| ");
         for(Couleur c: Couleur.values()) {
@@ -108,6 +109,8 @@ public class VueJeuCLI implements VueJeu {
         }
         System.out.println("");
     }
+
+    // Méthode affichant les statistiques des parties dans le CLI
     public void afficherStats(Statistiques stats) {
         System.out.println("----------Statistiques au bout de " + stats.getNbParties() + " partie(s)----------");
         System.out.println("Nombre de cartes jouées: " + stats.getCartesJouees());
@@ -120,6 +123,7 @@ public class VueJeuCLI implements VueJeu {
         System.out.println("BotDéfausse: " + arrondi(stats.getTauxVictoire("BotDef")) + "%");
     }
 
+    // Méthode privée permettant d'arrondir les valeurs des statistiques au centième
     private double arrondi(double valeur) {
         double arrondiCent = BigDecimal
                 .valueOf(valeur)
