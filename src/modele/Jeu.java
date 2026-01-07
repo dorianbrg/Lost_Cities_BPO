@@ -108,24 +108,24 @@ public class Jeu {
         if (cartePioche != null) {
             Carte lastCarteDefJ0 = this.joueur0.getLastCarteDefausse();
             Carte lastCarteDefJ1 = this.joueur1.getLastCarteDefausse();
-            if ( (joueurCourant == 0) && (lastCarteDefJ0 == null || (cartePioche.compareTo(lastCarteDefJ0) != 0) ) ){
+            if ( (couleur == null) && (joueurCourant == 0) ) {
                 this.joueur0.getMain().ajouterCartes(cartePioche);
-                if (couleur == null) {
-                    this.pioche.prendreCarte();
-                }
-                else {
-                    this.defausses.get(couleur).prendreCarte();
-                }
+                this.pioche.prendreCarte();
+                return true;
+            }
+            else if ( (couleur == null) && (joueurCourant == 1) ) {
+                this.joueur1.getMain().ajouterCartes(cartePioche);
+                this.pioche.prendreCarte();
+                return true;
+            }
+            else if ( (joueurCourant == 0) && (lastCarteDefJ0 == null || (cartePioche.compareTo(lastCarteDefJ0) != 0) ) ){
+                this.joueur0.getMain().ajouterCartes(cartePioche);
+                this.defausses.get(couleur).prendreCarte();
                 return true;
             }
             else if ( (joueurCourant == 1) && (lastCarteDefJ1 == null || (cartePioche.compareTo(lastCarteDefJ1) != 0) ) ) {
                 this.joueur1.getMain().ajouterCartes(cartePioche);
-                if (couleur == null) {
-                    this.pioche.prendreCarte();
-                }
-                else {
-                    this.defausses.get(couleur).prendreCarte();
-                }
+                this.defausses.get(couleur).prendreCarte();
                 return true;
             }
             else { // Cas où la carte pioché est l'ancienne défaussé par le jour, or cela ne doit pas être le cas
