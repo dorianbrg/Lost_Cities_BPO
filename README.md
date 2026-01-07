@@ -19,7 +19,7 @@
     Le tour du joueur est terminé et passe au joueur suivant.
     Voici comment cela se déroule:
 
-    ![alt text](image-1.png)
+    ![alt text](images/image-1.png)
 
 - Si le joueur est un "Bot" (stratégie du joueur):
     - Sa main triée sera également affichée. En théorie, on est pas sensé voir la main de l'adversaire mais on peut souhaiter la garder pour observer le bon fonctionnement de la stratégie du bot choisie afin de faciliter le correction (Cela peut être fait si vous le souhaiter).
@@ -30,19 +30,19 @@
         
     Le tour du bot est terminé et passe au joueur suivant.
 
-    ![alt text](image-2.png)
+    ![alt text](images/image-2.png)
 
 ## Quand le jeu est fini
 
 - Affichage du gagnant (ou pas, s'il y a égalité) dans la console.
 - Affichage du détail des points.
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 - Affichage des statistiques (accumulées au fil des parties si plusieurs parties):
     - Nombre de cartes jouéées/défaussées
     - Score moyen par expédition pour un joueur (pas une partie)
     - Taux de victoire pour chacune des stratégie
-![alt text](image-4.png)
+![alt text](images/image-4.png)
 
 - Possibilité de rejouer une partie
 
