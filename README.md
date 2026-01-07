@@ -1,6 +1,13 @@
 # LostCities BERGER Dorian
 
-- Pour lancer le jeu (sur IntelliJ), il suffit de run le main de la classe LostCities (Ctrl + F5).
+## IntelliJ
+- Pour lancer le jeu, il suffit de run le main de la classe LostCities (Ctrl + F5).
+
+## Terminal
+- Compilation:
+    - taper dans le terminal (à la racine du projet): ```javac -d out -sourcepath src src/controle/LostCities.java```
+- Exécution:
+    - taper à la suite: ```java -cp out controle.LostCities```
 - Tout se passe par la suite dans la console qui sera par la suite visible.
 - Avant que le jeu débute, il vous faudra renseigner le nom des joueurs ainsi que le type des joueurs (Humain, BotMin, BotDéfausse...) avec l'écriture précisée dans les input (les saisies ne sont pas sensibles à la casse).
 - Le joueur 1 commence toujours. On aurait pu imaginer que ce soit le plus jeune qui commence en donnant l'âge de chaque joueur lors de la création de la partie.
@@ -24,7 +31,7 @@
     ![alt text](images/image-1.png)
 
 - Si le joueur est un "Bot" (stratégie du joueur):
-    - Sa main triée sera également affichée. En théorie, on est pas sensé voir la main de l'adversaire mais on peut souhaiter la garder pour observer le bon fonctionnement de la stratégie du bot choisie afin de faciliter le correction (Cela peut être fait si vous le souhaiter).
+    - Sa main triée sera également affichée. En théorie, on est pas sensé voir la main de l'adversaire mais on peut souhaiter la garder pour observer le bon fonctionnement de la stratégie du bot choisie afin de faciliter la correction (Cela peut être fait si vous le souhaitez).
     - Les expéditions ne sont pas affichées pour ne pas avoir des lignes de code inutiles dans la console (L'état du jeu final est quand même affiché si la partie se déroule entre 2 bots). Donc l'observation de l'expédition du bot peut se faire au tour du joueur "Humain" pour observer quelle carte le bot a t-il joué.
     - Idem pour les défausses.
 
