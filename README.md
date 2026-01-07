@@ -4,6 +4,8 @@
 - Tout se passe par la suite dans la console ainsi créée.
 - Avant que le jeu débute, il vous faudra renseigner le nom des joueurs ainsi que le type des joueurs (Humain, BotMin, BotDéfausse...) avec l'écriture précisée dans les input (les saisies ne sont pas sensibles à la casse).
 
+![alt text](image.png)
+
 ## A chaque tour de jeu d'un joueur,
 - Si le joueur est un "Humain" (stratégie du joueur):
     Sa main triée sera affichée avec l'indice de chacune des cartes.
@@ -15,6 +17,8 @@
     3) Elle lui demandera où piocher la carte.
 
     Le tour du joueur est terminé et passe au joueur suivant.
+
+    ![alt text](image-1.png)
 
 - Si le joueur est un "Bot" (stratégie du joueur):
     Sa main triée sera également affichée. En théorie, on est pas sensé voir la main de l'adversaire mais on peut souhaiter la garder pour observer le bon fonctionnement de la stratégie du bot choisie afin de faciliter le correction (Cela peut être fait si vous le souhaiter).
