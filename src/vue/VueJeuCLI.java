@@ -6,6 +6,8 @@ import modele.Joueur;
 import modele.TypeCoup;
 import modele.carte.Couleur;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -102,7 +104,7 @@ public class VueJeuCLI implements VueJeu {
     public void afficherScoreMoyenExp(Statistiques stats) {
         System.out.print("| ");
         for(Couleur c: Couleur.values()) {
-            System.out.print(c.txt(stats.getScoreMoyenExp().get(c) / (2 * stats.getNbParties()) + "") + " | ");
+            System.out.print(c.txt(arrondi(stats.getScoreMoyenExp().get(c) / (2 * stats.getNbParties())) + "") + " | ");
         }
         System.out.println("");
     }
@@ -113,9 +115,16 @@ public class VueJeuCLI implements VueJeu {
         System.out.println("Score moyen par expédition:");
         afficherScoreMoyenExp(stats);
         System.out.println("Taux de victoires des différentes stratégies:");
-        System.out.println("Humain: " + stats.getTauxVictoire("Humain") + "%");
-        System.out.println("BotMin: " + stats.getTauxVictoire("BotMin") + "%");
-        System.out.println("BotDéfausse: " + stats.getTauxVictoire("BotDef") + "%");
+        System.out.println("Humain: " + arrondi(stats.getTauxVictoire("Humain")) + "%");
+        System.out.println("BotMin: " + arrondi(stats.getTauxVictoire("BotMin")) + "%");
+        System.out.println("BotDéfausse: " + arrondi(stats.getTauxVictoire("BotDef")) + "%");
+    }
 
+    private double arrondi(double valeur) {
+        double arrondiCent = BigDecimal
+                .valueOf(valeur)
+                .setScale(2, RoundingMode.HALF_UP) // 2 chiffres après la virgule
+                .doubleValue();// redevient un double
+        return arrondiCent;
     }
 }
