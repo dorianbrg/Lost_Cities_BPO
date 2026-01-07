@@ -31,10 +31,10 @@ public class LostCities {
             Jeu jeu = new Jeu(nom1, nom2);
 
             // Configuration joueur 1
-            System.out.println("Veuillez entrer le type du joueur 1 (Humain ou Bot):");
+            System.out.println("Veuillez entrer le type du joueur 1 (Humain/Bot):");
             String type1 = sc.nextLine();
             while ((!type1.equalsIgnoreCase("Humain")) && (!type1.equalsIgnoreCase("Bot"))) {
-                System.out.println("Veuillez renseigner un type valide (Humain ou Bot):");
+                System.out.println("Veuillez renseigner un type valide (Humain/Bot):");
                 type1 = sc.nextLine();
             }
 
@@ -42,10 +42,10 @@ public class LostCities {
             if (type1.equalsIgnoreCase("Humain")) {
                 joueur1.setStrategie(new Humain(vue));
             } else {
-                System.out.println("Quel type de bots ? (BotMin ou BotDef)");
+                System.out.println("Quel type de bots ? (BotMin/BotDef)");
                 String ssType1 = sc.nextLine();
                 while ((!ssType1.equalsIgnoreCase("BotMin")) && (!ssType1.equalsIgnoreCase("BotDef"))) {
-                    System.out.println("Veuillez renseigner un sous-type valide (BotMin ou BotDef):");
+                    System.out.println("Veuillez renseigner un sous-type valide (BotMin/BotDef):");
                     ssType1 = sc.nextLine();
                 }
                 if (ssType1.equalsIgnoreCase("BotMin")) {
@@ -56,10 +56,10 @@ public class LostCities {
             }
 
             // Configuration joueur 2
-            System.out.println("Veuillez entrer le type du joueur 2 (Humain ou Bot):");
+            System.out.println("Veuillez entrer le type du joueur 2 (Humain/Bot):");
             String type2 = sc.nextLine();
             while ((!type2.equalsIgnoreCase("Humain")) && (!type2.equalsIgnoreCase("Bot"))) {
-                System.out.println("Veuillez renseigner un type valide (Humain ou Bot):");
+                System.out.println("Veuillez renseigner un type valide (Humain/Bot):");
                 type2 = sc.nextLine();
             }
 
@@ -67,10 +67,10 @@ public class LostCities {
             if (type2.equalsIgnoreCase("Humain")) {
                 joueur2.setStrategie(new Humain(vue));
             } else {
-                System.out.println("Quel type de bots ? (BotMin ou BotDef)");
+                System.out.println("Quel type de bots ? (BotMin/BotDef)");
                 String ssType2 = sc.nextLine();
                 while ((!ssType2.equalsIgnoreCase("BotMin")) && (!ssType2.equalsIgnoreCase("BotDef"))) {
-                    System.out.println("Veuillez renseigner un sous-type valide (BotMin ou BotDef):");
+                    System.out.println("Veuillez renseigner un sous-type valide (BotMin/BotDef):");
                     ssType2 = sc.nextLine();
                 }
                 if (ssType2.equalsIgnoreCase("BotMin")) {
