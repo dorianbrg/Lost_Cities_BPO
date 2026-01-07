@@ -6,6 +6,7 @@ public class Expedition extends PaquetCouleur {
         super(couleur);
     }
 
+    @Override
     public boolean peutPoser(Carte carte) {
         Carte DerCarte = voirDerniereCarte();
         if (DerCarte == null) {
@@ -15,6 +16,7 @@ public class Expedition extends PaquetCouleur {
                (carte.compareTo(DerCarte) >= 0); // correspondance couleur et valeur croissante du paquet
     }
 
+    // Méthode permettant de calcuelr le score d'une expédition grâce à un stream.
     public int calculerScore() {
         int score = super.cartes()
                 .filter(c -> c.getCouleur() == super.getCouleur())

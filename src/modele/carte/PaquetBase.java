@@ -37,7 +37,7 @@ abstract public class PaquetBase implements Paquet {
         this.paquet.sort(null);
         // ordre naturel implémenté dans Carte
     }
-    protected void trier_val() { // tri par valeurs
+    protected void trierVal() { // tri par valeurs
         this.paquet.sort(COMP_VAL);
     }
 
