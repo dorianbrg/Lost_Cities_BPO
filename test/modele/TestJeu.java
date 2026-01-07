@@ -75,7 +75,7 @@ public class TestJeu {
         assertTrue(jeu.getDefausse(carteJoue.getCouleur()).estVide());
         assertTrue(jeu.jouer(coup));
         assertFalse(jeu.getDefausse(carteJoue.getCouleur()).estVide());
-        assertTrue(jeu.piocher(carteJoue.getCouleur()));
+        assertFalse(jeu.piocher(carteJoue.getCouleur()));
     }
 
     @Test
