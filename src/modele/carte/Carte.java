@@ -15,9 +15,11 @@ public class Carte implements Comparable<Carte> {
             Comparator.comparing(Carte::getCouleur)
                     .thenComparingInt(c -> c.getCarte().getValeur());
 
+    // Comparateur par valeur uniquement, utilisé pour BotMin essentiellement
     public static final Comparator<Carte> COMP_VAL =
             Comparator.comparingInt(c -> c.getCarte().getValeur());
 
+    // Comparaison pour l'ordre naturel
     @Override
     public int compareTo(Carte autre) { // pour l'ordre naturel comme la classe implémente Comparable<Carte>
         return COMP.compare(this,autre);
@@ -32,21 +34,6 @@ public class Carte implements Comparable<Carte> {
 
     public String toString() {
         String res = this.carte.getValeur() + " " + this.couleur;
-        if (this.couleur == Couleur.JAUNE) {
-            return "\u001B[33m" + res + "\u001B[0m";
-        }
-        if (this.couleur == Couleur.BLEU) {
-            return "\u001B[34m" + res + "\u001B[0m";
-        }
-        if (this.couleur == Couleur.ROUGE) {
-            return "\u001B[31m" + res + "\u001B[0m";
-        }
-        if (this.couleur == Couleur.BLANC) {
-            return "\u001B[37m" + res + "\u001B[0m";
-        }
-        if (this.couleur == Couleur.VERT) {
-            return "\u001B[32m" + res + "\u001B[0m";
-        }
-        return res;
+        return this.couleur.txt(res);
     }
 }
