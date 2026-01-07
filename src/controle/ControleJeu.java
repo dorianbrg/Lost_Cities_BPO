@@ -62,6 +62,7 @@ public class ControleJeu {
             jeu.passerJoueurSuivant();
         }
         vue.afficher(jeu);
+        System.out.println("----------Fin de partie----------");
         Joueur joueurGagnant = jeu.getJoueurGagnant();
         Joueur j0 = jeu.getJoueur(0);
         Joueur j1 = jeu.getJoueur(1);
