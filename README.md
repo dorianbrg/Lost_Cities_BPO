@@ -43,9 +43,11 @@
     - Nombre de cartes jouées/défaussées.
     - Score moyen par expédition pour un joueur (pas une partie).
     - Taux de victoire pour chacune des stratégies.
-    ![alt text](images/image-4.png)
+
+![alt text](images/image-4.png)
 
 - Possibilité de rejouer une partie.
+
 ![alt text](images/image-5.png)
 
 
