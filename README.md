@@ -3,6 +3,7 @@
 - Pour lancer le jeu (sur IntelliJ), il suffit de run le main de la classe LostCities (Ctrl + F5).
 - Tout se passe par la suite dans la console qui sera par la suite visible.
 - Avant que le jeu débute, il vous faudra renseigner le nom des joueurs ainsi que le type des joueurs (Humain, BotMin, BotDéfausse...) avec l'écriture précisée dans les input (les saisies ne sont pas sensibles à la casse).
+- Le joueur 1 commence toujours. On aurait pu imaginer que ce soit le plus jeune qui commence en donnant l'âge de chaque joueur lors de la création de la partie.
 
 ![alt text](images/image.png)
 

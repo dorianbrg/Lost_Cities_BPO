@@ -14,7 +14,7 @@ public class Joueur {
     private Main main;
     private Strategie strategie;
     private Map<Couleur, Expedition> expeditions;
-    private Carte lastCarteDefausse;
+    private Carte lastCarteDefausse; // Utile pour ne pas piocher sa dernière carte défaussée
 
     public Joueur(String nom) {
         this.nom = nom;
@@ -34,6 +34,7 @@ public class Joueur {
         return strategie.getStrategie();
     }
 
+    // Méthode permettant de définir la dernière carte défaussée du joueur
     public void setLastCarteDefausse(Carte carte) {
         this.lastCarteDefausse = carte;
     }
